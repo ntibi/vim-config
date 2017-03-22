@@ -34,5 +34,4 @@ else
 	fi
 fi
 
-echo "type 'vim source-file $DEST' to apply update"
 echo "Done"
