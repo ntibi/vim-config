@@ -3,7 +3,9 @@ syntax on
 set whichwrap +=<,>,[,],h,l
 set backspace +=eol,start,indent
 
+set number
 set relativenumber
+set numberwidth=1
 
 set wildmenu
 set showcmd
@@ -19,5 +21,6 @@ colorscheme ron
 
 cmap w!! w !sudo tee % > /dev/null
 
-highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey
+highlight LineNr ctermfg=DarkGrey
+highlight CursorLineNr ctermfg=LightBlue
 
