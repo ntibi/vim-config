@@ -17,10 +17,75 @@ set showmatch
 set incsearch
 set hlsearch
 
-colorscheme ron
+set tabstop=4
 
+noremap ; :
+
+"clear highlight on redraw
+noremap <C-l> <C-l>:nohlsearch<CR>
+
+" C-[ae] for beginning/end of line
+nnoremap <C-a> 0
+nnoremap <C-e> $
+inoremap <C-a> <C-o>0
+inoremap <C-e> <C-o>$
+
+" move text faster
+nnoremap <M-up> :move -2<CR>
+nnoremap <M-down> :move +1<CR>
+vnoremap <M-up> :move '<-2<CR>gv
+vnoremap <M-down> :move '>+1<CR>gv
+
+" better next/prev buffer
+nnoremap J :bprevious<CR>
+nnoremap K :bnext<CR>
+
+vnoremap <C-n> :normal
+
+" write file opened in non-root
 cmap w!! w !sudo tee % > /dev/null
+
+colorscheme ron
 
 highlight LineNr ctermfg=DarkGrey
 highlight CursorLineNr ctermfg=LightBlue
+
+let s:comment_map = {
+    \   "c": '\/\/',
+    \   "cpp": '\/\/',
+    \   "python": '#',
+    \   "conf": '#',
+    \   "lisp": ';',
+    \   "zsh": '#',
+    \   "vim": '"',
+    \   "sh": '#',
+    \ }
+
+let s:default_comment = "#"
+
+function! ToggleComment()
+    if has_key(s:comment_map, &filetype)
+        let comment_leader = s:comment_map[&filetype]
+    else
+    if strlen(&filetype) != 0
+            echo "set a comment type for filetype" &filetype
+        end
+        let comment_leader = s:default_comment
+    end
+    if getline('.') =~ "^\\s*" . comment_leader . " "
+        " Uncomment the line
+        execute "silent s/^\\(\\s*\\)" . comment_leader . " /\\1/"
+    else
+        if getline('.') =~ "^\\s*" . comment_leader
+            " Uncomment the line
+            execute "silent s/^\\(\\s*\\)" . comment_leader . "/\\1/"
+        else
+            " Comment the line
+            execute "silent s/^\\(\\s*\\)/\\1" . comment_leader . " /"
+        end
+    end
+endfunction
+
+nnoremap , :call ToggleComment()<cr>
+vnoremap , :call ToggleComment()<cr>
 
