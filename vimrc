@@ -18,6 +18,8 @@ set incsearch
 set hlsearch
 
 set tabstop=4
+set shiftwidth=4
+set expandtab
 
 noremap ; :
 
@@ -67,7 +69,7 @@ function! ToggleComment()
     if has_key(s:comment_map, &filetype)
         let comment_leader = s:comment_map[&filetype]
     else
-    if strlen(&filetype) != 0
+        if strlen(&filetype) != 0
             echo "set a comment type for filetype" &filetype
         end
         let comment_leader = s:default_comment
