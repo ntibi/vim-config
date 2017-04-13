@@ -70,6 +70,9 @@ cnoremap <C-k> <Up>
 vnoremap <Tab> >
 vnoremap <S-Tab> <
 
+noremap + <C-a>
+noremap - <C-x>
+
 " write file opened in non-root
 cnoremap w!! w !sudo tee % > /dev/null
 
