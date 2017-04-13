@@ -1,3 +1,5 @@
+""" OPTIONS:
+
 syntax on
 
 set whichwrap +=<,>,[,],h,l
@@ -21,6 +23,11 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+
+set noeol
+
+
+""" REMAPS:
 
 noremap ; :
 
@@ -47,11 +54,6 @@ vnoremap <C-n> :normal
 
 " write file opened in non-root
 cmap w!! w !sudo tee % > /dev/null
-
-colorscheme ron
-
-highlight LineNr ctermfg=DarkGrey
-highlight CursorLineNr ctermfg=LightBlue
 
 let s:comment_map = {
     \   "c": '\/\/',
@@ -92,3 +94,10 @@ endfunction
 nnoremap , :call ToggleComment()<cr>
 vnoremap , :call ToggleComment()<cr>
 
+
+""" VISUALS:
+
+colorscheme ron
+
+highlight LineNr ctermfg=DarkGrey
+highlight CursorLineNr ctermfg=LightBlue
