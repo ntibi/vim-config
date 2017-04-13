@@ -54,8 +54,24 @@ nnoremap K :bnext<CR>
 
 vnoremap <C-n> :normal
 
+" autopair
+inoremap '' ''<Left>
+inoremap "" ""<Left>
+inoremap () ()<Left>
+inoremap [] []<Left>
+inoremap <> <><Left>
+
+" hjkl in cmd mode
+cnoremap <C-h> <Left>
+cnoremap <C-l> <Right>
+cnoremap <C-j> <Down>
+cnoremap <C-k> <Up>
+
+vnoremap <Tab> >
+vnoremap <S-Tab> <
+
 " write file opened in non-root
-cmap w!! w !sudo tee % > /dev/null
+cnoremap w!! w !sudo tee % > /dev/null
 
 let s:comment_map = {
     \   "c": '\/\/',
