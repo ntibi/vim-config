@@ -26,6 +26,8 @@ set expandtab
 
 set noeol
 
+set nowrap
+
 
 """ REMAPS:
 
