@@ -129,5 +129,26 @@ vnoremap , :call ToggleComment()<cr>
 
 colorscheme ron
 
-highlight LineNr ctermfg=DarkGrey
-highlight CursorLineNr ctermfg=LightBlue
+hi LineNr ctermfg=DarkGrey
+hi CursorLineNr ctermfg=LightBlue
+
+hi StatusLine   cterm=none ctermbg=236 ctermfg=51
+hi StatusLineNC cterm=none ctermbg=235 ctermfg=238
+
+hi VertSplit ctermfg=DarkGrey ctermfg=DarkGrey
+
+set laststatus=2
+set statusline=\ 
+set statusline+=%{&modified?\"+\":\"\ \"}\ 
+set statusline+=%f
+set statusline+=\ 
+set statusline+=%y
+set statusline+=\ 
+set statusline+=%r
+set statusline+=\ 
+set statusline+=%=
+set statusline+=[%{&fenc},%{&ff}]
+set statusline+=\ 
+set statusline+=[%l,%v]
+set statusline+=[%p%%]
+
