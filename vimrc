@@ -10,6 +10,7 @@ set relativenumber
 set numberwidth=1
 
 set wildmenu
+set wildmode=list:longest,full
 set showcmd
 
 set lazyredraw
@@ -28,10 +29,18 @@ set noeol
 
 set nowrap
 
+set scrolloff=7
+
+set t_Co=256
+
 
 """ REMAPS:
 
 noremap ; :
+
+" scroll half-screen
+nnoremap <C-j> <C-d>
+nnoremap <C-k> <C-u>
 
 "clear highlight on redraw
 noremap <C-l> <C-l>:nohlsearch<CR>
