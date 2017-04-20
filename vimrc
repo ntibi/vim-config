@@ -69,6 +69,7 @@ inoremap "" ""<Left>
 inoremap () ()<Left>
 inoremap [] []<Left>
 inoremap <> <><Left>
+inoremap {} {}<Left>
 
 " hjkl in cmd mode
 cnoremap <C-h> <Left>
