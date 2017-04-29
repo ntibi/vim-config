@@ -83,6 +83,9 @@ vnoremap <S-Tab> <
 nnoremap + <C-a>
 nnoremap - <C-x>
 
+nnoremap U <C-r>
+inoremap <C-r> <C-o>u
+
 " write file opened in non-root
 cnoremap w!! w !sudo tee % > /dev/null
 
@@ -153,3 +156,39 @@ set statusline+=\
 set statusline+=[%l,%v]
 set statusline+=[%p%%]
 
+
+
+""" PLUGIN:
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'https://github.com/luochen1990/rainbow' " rainbow paren
+    let g:rainbow_active = 1
+Plug 'https://github.com/itchyny/vim-cursorword' " underline all matches of the word at point
+Plug 'https://github.com/vim-scripts/a.vim' " :A to open corresponding .{c,h,cpp,hpp}
+Plug 'https://github.com/godlygeek/tabular' " :Tabularize (M-x align)
+
+Plug 'https://github.com/mbbill/undotree' " undo tree
+    noremap <C-x>u :UndotreeToggle<CR>
+    let g:undotree_SetFocusWhenToggle=1
+    let g:undotree_WindowLayout=4
+    function g:Undotree_CustomMap()
+        nmap <buffer> U <plug>UndotreeGoNextState
+        nmap <buffer> u <plug>UndotreeGoPreviousState
+    endfunc
+
+Plug 'https://github.com/justinmk/vim-syntax-extra' " more syntax highlight definitions
+
+Plug 'https://github.com/airblade/vim-gitgutteR' " git status in line gutter
+    noremap gl :GitGutterToggle<CR>
+    nmap ]h <Plug>GitGutterNextHunk
+    nmap [h <Plug>GitGutterPrevHunk
+    nmap ghs <Plug>GitGutterStageHunk
+    nmap ghS <Plug>GitGutterUndoHunk
+
+" Plug 'https://github.com/flazz/vim-colorschemes' " lots of schemes
+Plug 'https://github.com/crusoexia/vim-monokai' " monokai theme
+
+call plug#end()
+
+colorscheme monokai

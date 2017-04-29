@@ -9,15 +9,12 @@ DEST="$HOME/.vimrc"
 echo "checking for updates..."
 git -C $REPO_BASE pull
 
-if [ ! -e $DEST ] && [ ! -L $DEST ];
-then
+if [ ! -e $DEST ] && [ ! -L $DEST ]; then
 	echo "linking $DEST with $REPO_VIM"
 	ln -s $REPO_VIM $DEST
 else
-	if [ -L $DEST ];
-	then
-		if [ $(readlink $DEST) = $(echo $REPO_VIM) ];
-		then
+	if [ -L $DEST ]; then
+		if [ $(readlink $DEST) = $(echo $REPO_VIM) ]; then
 			echo "new .vimrc already installed"
 		else
 			echo "removing old $DEST pointing at $(readlink $DEST)"
@@ -33,5 +30,7 @@ else
 		ln -s $REPO_VIM $DEST
 	fi
 fi
+
+[ ! -e ~/.vim/autoload/plug.vim ] && curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "Done"
