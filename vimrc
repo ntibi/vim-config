@@ -186,6 +186,9 @@ Plug 'https://github.com/airblade/vim-gitgutteR' " git status in line gutter
     nmap ghs <Plug>GitGutterStageHunk
     nmap ghS <Plug>GitGutterUndoHunk
 
+Plug 'https://github.com/scrooloose/nerdtree' " fs browser
+    map <C-n> :NERDTreeToggle<CR>
+
 " Plug 'https://github.com/flazz/vim-colorschemes' " lots of schemes
 Plug 'https://github.com/crusoexia/vim-monokai' " monokai theme
 
