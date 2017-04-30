@@ -46,6 +46,9 @@ Plug 'https://github.com/itchyny/lightline.vim' " nice statusline
 
 Plug 'https://github.com/drmingdrmer/vim-tabbar' " opened files in tabs
 
+"Plug 'https://github.com/jaxbot/semantic-highlight.vim' " it overrides some keywords :/
+    "let g:semanticTermColors = [211, 213, 217, 219, 223, 225, 230, 231]
+
 call plug#end()
 
 colorscheme monokai
