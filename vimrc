@@ -173,15 +173,15 @@ vnoremap , :call ToggleComment()<cr>
 
 """ VISUALS:
 
-colorscheme ron
-
-hi LineNr ctermfg=DarkGrey
-hi CursorLineNr ctermfg=LightBlue
-
-hi StatusLine   cterm=none ctermbg=236 ctermfg=51
-hi StatusLineNC cterm=none ctermbg=235 ctermfg=238
-
-hi VertSplit ctermfg=DarkGrey ctermfg=DarkGrey
+" colorscheme ron
+" 
+" hi LineNr ctermfg=DarkGrey
+" hi CursorLineNr ctermfg=LightBlue
+" 
+" hi StatusLine   cterm=none ctermbg=236 ctermfg=51
+" hi StatusLineNC cterm=none ctermbg=235 ctermfg=238
+" 
+" hi VertSplit ctermfg=DarkGrey ctermfg=DarkGrey
 
 set laststatus=2
 set statusline=\ 
