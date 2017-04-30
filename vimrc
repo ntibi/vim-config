@@ -30,6 +30,10 @@ Plug 'https://github.com/airblade/vim-gitgutteR' " git status in line gutter
 Plug 'https://github.com/scrooloose/nerdtree' " fs browser
     map <C-n> :NERDTreeToggle<CR>
 
+
+Plug 'https://github.com/scrooloose/nerdcommenter'
+    map , <plug>NERDCommenterToggle
+
 Plug 'https://github.com/crusoexia/vim-monokai' " monokai theme
 
 call plug#end()
@@ -130,45 +134,6 @@ inoremap <C-r> <C-o>u
 
 " write file opened in non-root
 cnoremap w!! w !sudo tee % > /dev/null
-
-let s:comment_map = {
-    \   "c": '\/\/',
-    \   "cpp": '\/\/',
-    \   "python": '#',
-    \   "conf": '#',
-    \   "lisp": ';',
-    \   "zsh": '#',
-    \   "vim": '"',
-    \   "sh": '#',
-    \ }
-
-let s:default_comment = "#"
-
-function! ToggleComment()
-    if has_key(s:comment_map, &filetype)
-        let comment_leader = s:comment_map[&filetype]
-    else
-        if strlen(&filetype) != 0
-            echo "set a comment type for filetype" &filetype
-        end
-        let comment_leader = s:default_comment
-    end
-    if getline('.') =~ "^\\s*" . comment_leader . " "
-        " Uncomment the line
-        execute "silent s/^\\(\\s*\\)" . comment_leader . " /\\1/"
-    else
-        if getline('.') =~ "^\\s*" . comment_leader
-            " Uncomment the line
-            execute "silent s/^\\(\\s*\\)" . comment_leader . "/\\1/"
-        else
-            " Comment the line
-            execute "silent s/^\\(\\s*\\)/\\1" . comment_leader . " /"
-        end
-    end
-endfunction
-
-nnoremap , :call ToggleComment()<cr>
-vnoremap , :call ToggleComment()<cr>
 
 
 """ VISUALS:
