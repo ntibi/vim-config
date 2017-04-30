@@ -45,6 +45,7 @@ Plug 'https://github.com/itchyny/lightline.vim' " nice statusline
     let g:lightline = { 'enable': { 'tabline': 0 } } " disable lightline.tabline to use vim-tabbar
 
 Plug 'https://github.com/drmingdrmer/vim-tabbar' " opened files in tabs
+    let g:vimtabbar_pattern=' {path}  '
 
 "Plug 'https://github.com/jaxbot/semantic-highlight.vim' " it overrides some keywords :/
     "let g:semanticTermColors = [211, 213, 217, 219, 223, 225, 230, 231]
