@@ -1,6 +1,5 @@
 " TODO: add command to add a comment at the end of the line
 " TODO: find an equivalent to rainbow mode
-" TODO: make a better status line (plugin?)
 " 
 """ PLUGINS:
 
@@ -9,8 +8,11 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'https://github.com/luochen1990/rainbow' " rainbow paren
     let g:rainbow_active = 1
+
 Plug 'https://github.com/itchyny/vim-cursorword' " underline all matches of the word at point
+
 Plug 'https://github.com/vim-scripts/a.vim' " :A to open corresponding .{c,h,cpp,hpp}
+
 Plug 'https://github.com/godlygeek/tabular' " :Tabularize (M-x align)
 
 Plug 'https://github.com/mbbill/undotree' " undo tree
@@ -34,14 +36,15 @@ Plug 'https://github.com/airblade/vim-gitgutteR' " git status in line gutter
 Plug 'https://github.com/scrooloose/nerdtree' " fs browser
     map <C-n> :NERDTreeToggle<CR>
 
-
-Plug 'https://github.com/scrooloose/nerdcommenter'
+Plug 'https://github.com/scrooloose/nerdcommenter' " (un)comment easily
     map , <plug>NERDCommenterToggle
 
-Plug 'https://github.com/drmingdrmer/vim-tabbar'
-
-
 Plug 'https://github.com/crusoexia/vim-monokai' " monokai theme
+
+Plug 'https://github.com/itchyny/lightline.vim' " nice statusline
+    let g:lightline = { 'enable': { 'tabline': 0 } } " disable lightline.tabline to use vim-tabbar
+
+Plug 'https://github.com/drmingdrmer/vim-tabbar' " opened files in tabs
 
 call plug#end()
 
@@ -55,6 +58,7 @@ augroup vimrc " Changes to the colorscheme
 augroup END
 
 catch
+    echo v:exception
 endtry
 
 
@@ -152,28 +156,28 @@ cnoremap w!! w !sudo tee % > /dev/null
 
 """ VISUALS:
 
-" colorscheme ron
-" 
-" hi LineNr ctermfg=DarkGrey
-" hi CursorLineNr ctermfg=LightBlue
-" 
-" hi StatusLine   cterm=none ctermbg=236 ctermfg=51
-" hi StatusLineNC cterm=none ctermbg=235 ctermfg=238
-" 
-" hi VertSplit ctermfg=DarkGrey ctermfg=DarkGrey
+"colorscheme ron
 
-set laststatus=2
-set statusline=\ 
-set statusline+=%{&modified?\"+\":\"\ \"}\ 
-set statusline+=%f
-set statusline+=\ 
-set statusline+=%y
-set statusline+=\ 
-set statusline+=%r
-set statusline+=\ 
-set statusline+=%=
-set statusline+=[%{&fenc},%{&ff}]
-set statusline+=\ 
-set statusline+=[%l,%v]
-set statusline+=[%p%%]
+"hi LineNr ctermfg=DarkGrey
+"hi CursorLineNr ctermfg=LightBlue
+
+"hi StatusLine   cterm=none ctermbg=236 ctermfg=51
+"hi StatusLineNC cterm=none ctermbg=235 ctermfg=238
+
+"hi VertSplit ctermfg=DarkGrey ctermfg=DarkGrey
+
+"set laststatus=2
+"set statusline=\ 
+"set statusline+=%{&modified?\"+\":\"\ \"}\ 
+"set statusline+=%f
+"set statusline+=\ 
+"set statusline+=%y
+"set statusline+=\ 
+"set statusline+=%r
+"set statusline+=\ 
+"set statusline+=%=
+"set statusline+=[%{&fenc},%{&ff}]
+"set statusline+=\ 
+"set statusline+=[%l,%v]
+"set statusline+=[%p%%]
 
