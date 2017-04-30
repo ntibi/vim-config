@@ -1,3 +1,7 @@
+" TODO: add command to add a comment at the end of the line
+" TODO: find an equivalent to rainbow mode
+" TODO: make a better status line (plugin?)
+" 
 """ PLUGINS:
 
 try
@@ -34,11 +38,21 @@ Plug 'https://github.com/scrooloose/nerdtree' " fs browser
 Plug 'https://github.com/scrooloose/nerdcommenter'
     map , <plug>NERDCommenterToggle
 
+Plug 'https://github.com/drmingdrmer/vim-tabbar'
+
+
 Plug 'https://github.com/crusoexia/vim-monokai' " monokai theme
 
 call plug#end()
 
 colorscheme monokai
+
+augroup vimrc " Changes to the colorscheme
+    autocmd!
+    autocmd ColorScheme *  hi TabLine      cterm=none  ctermfg=130  ctermbg=235
+                        \| hi TabLineSel   cterm=none  ctermfg=202  ctermbg=238
+                        \| hi TabLineFill  cterm=none  ctermfg=245  ctermbg=235
+augroup END
 
 catch
 endtry
