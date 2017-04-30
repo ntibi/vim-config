@@ -97,6 +97,8 @@ set scrolloff=7
 
 set t_Co=256
 
+set laststatus=2
+
 
 """ REMAPS:
 
@@ -166,7 +168,6 @@ cnoremap w!! w !sudo tee % > /dev/null
 
 "hi VertSplit ctermfg=DarkGrey ctermfg=DarkGrey
 
-"set laststatus=2
 "set statusline=\ 
 "set statusline+=%{&modified?\"+\":\"\ \"}\ 
 "set statusline+=%f
