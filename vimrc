@@ -189,9 +189,12 @@ Plug 'https://github.com/airblade/vim-gitgutteR' " git status in line gutter
 Plug 'https://github.com/scrooloose/nerdtree' " fs browser
     map <C-n> :NERDTreeToggle<CR>
 
-" Plug 'https://github.com/flazz/vim-colorschemes' " lots of schemes
 Plug 'https://github.com/crusoexia/vim-monokai' " monokai theme
 
 call plug#end()
 
 colorscheme monokai
+
+
+catch
+endtry
