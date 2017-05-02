@@ -1,4 +1,3 @@
-" TODO: find an equivalent to rainbow mode
 " TODO: paste in the cmd buffer
 " TODO: add commands in the cmd buffer
 " TODO: add highlights like TODO (ex: WARNING, ERROR, BUG)
@@ -173,9 +172,7 @@ vnoremap <S-Tab> <
 nnoremap + <C-a>
 nnoremap - <C-x>
 
-" u:undo, U:redo, C-r in insert: undo
 nnoremap U <C-r>
-inoremap <C-r> <C-o>u
 
 " write file opened in non-root
 cnoremap w!! w !sudo tee % > /dev/null
