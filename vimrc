@@ -126,6 +126,8 @@ noremap ; :
 " scroll half-screen
 nnoremap <C-j> <C-d>
 nnoremap <C-k> <C-u>
+vnoremap <C-j> <C-d>
+vnoremap <C-k> <C-u>
 
 "clear highlight on redraw
 noremap <C-l> <C-l>:nohlsearch<CR>
@@ -146,7 +148,7 @@ vnoremap <M-down> :move '>+1<CR>gv
 nnoremap J :bprevious<CR>
 nnoremap K :bnext<CR>
 
-vnoremap <C-n> :normal
+vnoremap <C-n> :normal 
 
 " autopair
 inoremap '' ''<Left>
