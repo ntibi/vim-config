@@ -35,7 +35,7 @@ Plug 'https://github.com/scrooloose/nerdtree' " fs browser
 
 Plug 'https://github.com/scrooloose/nerdcommenter' " (un)comment easily
     let g:NERDSpaceDelims = 1
-    let g:NERDCompactSexyComs = 1
+    let g:NERDCompactSexyComs = 0
     let g:NERDCommentEmptyLines = 1
     map , <plug>NERDCommenterToggle
     map g; :call NERDComment('n', 'Append')<CR>
