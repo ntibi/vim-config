@@ -1,5 +1,7 @@
 " TODO: add command to add a comment at the end of the line
 " TODO: find an equivalent to rainbow mode
+" TODO: paste in the cmd buffer
+" TODO: add commands in the cmd buffer
 " 
 """ PLUGINS:
 
@@ -42,7 +44,21 @@ Plug 'https://github.com/scrooloose/nerdcommenter' " (un)comment easily
 Plug 'https://github.com/crusoexia/vim-monokai' " monokai theme
 
 Plug 'https://github.com/itchyny/lightline.vim' " nice statusline
-    let g:lightline = { 'enable': { 'tabline': 0 } } " disable lightline.tabline to use vim-tabbar
+" disable lightline.tabline to use vim-tabbar
+    let g:lightline = {
+                \'enable': { 'tabline': 0 },
+                \'mode_map': {
+                    \'n'      : 'NOR',
+                    \'i'      : 'INS',
+                    \'R'      : 'REP',
+                    \'v'      : 'VIS',
+                    \'V'      : 'V-L',
+                    \"\<C-v>" : 'V-B',
+                    \'c'      : 'CMD',
+                    \'S'      : 'S-L',
+                    \"\<C-s>" : 'S-B',
+                    \'t'      : 'TER'},
+                \}
 
 Plug 'https://github.com/drmingdrmer/vim-tabbar' " opened files in tabs
     let g:vimtabbar_pattern=' {path}  '
