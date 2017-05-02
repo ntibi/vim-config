@@ -1,5 +1,3 @@
-" TODO: paste in the cmd buffer
-" TODO: add commands in the cmd buffer
 " TODO: add highlights like TODO (ex: WARNING, ERROR, BUG)
 " 
 """ PLUGINS:
@@ -180,6 +178,9 @@ cnoremap w!! w !sudo tee % > /dev/null
 
 nnoremap gll :set number!<CR>
 nnoremap glr :set relativenumber!<CR>
+
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
 
 
 """ VISUALS:
