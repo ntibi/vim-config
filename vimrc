@@ -2,6 +2,7 @@
 " TODO: find an equivalent to rainbow mode
 " TODO: paste in the cmd buffer
 " TODO: add commands in the cmd buffer
+" TODO: add highlights like TODO (ex: WARNING, ERROR, BUG)
 " 
 """ PLUGINS:
 
