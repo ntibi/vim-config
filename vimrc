@@ -1,5 +1,3 @@
-" TODO: add highlights like TODO (ex: WARNING, ERROR, BUG)
-" 
 """ PLUGINS:
 
 try
