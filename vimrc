@@ -30,7 +30,7 @@ Plug 'https://github.com/mbbill/undotree' " undo tree
 Plug 'https://github.com/justinmk/vim-syntax-extra' " more syntax highlight definitions
 
 Plug 'https://github.com/airblade/vim-gitgutteR' " git status in line gutter
-    noremap gl :GitGutterToggle<CR>
+    noremap glg :GitGutterToggle<CR>
     nmap ]h <Plug>GitGutterNextHunk
     nmap [h <Plug>GitGutterPrevHunk
     nmap ghs <Plug>GitGutterStageHunk
@@ -170,11 +170,16 @@ vnoremap <S-Tab> <
 nnoremap + <C-a>
 nnoremap - <C-x>
 
+" u:undo, U:redo, C-r in insert: undo
 nnoremap U <C-r>
 inoremap <C-r> <C-o>u
 
 " write file opened in non-root
 cnoremap w!! w !sudo tee % > /dev/null
+
+
+nnoremap gll :set number!<CR>
+nnoremap glr :set relativenumber!<CR>
 
 
 """ VISUALS:
