@@ -1,4 +1,3 @@
-" TODO: add command to add a comment at the end of the line
 " TODO: find an equivalent to rainbow mode
 " TODO: paste in the cmd buffer
 " TODO: add commands in the cmd buffer
@@ -31,16 +30,20 @@ Plug 'https://github.com/justinmk/vim-syntax-extra' " more syntax highlight defi
 
 Plug 'https://github.com/airblade/vim-gitgutteR' " git status in line gutter
     noremap glg :GitGutterToggle<CR>
-    nmap ]h <Plug>GitGutterNextHunk
-    nmap [h <Plug>GitGutterPrevHunk
-    nmap ghs <Plug>GitGutterStageHunk
-    nmap ghS <Plug>GitGutterUndoHunk
+    nmap ]h <plug>GitGutterNextHunk
+    nmap [h <plug>GitGutterPrevHunk
+    nmap ghs <plug>GitGutterStageHunk
+    nmap ghS <plug>GitGutterUndoHunk
 
 Plug 'https://github.com/scrooloose/nerdtree' " fs browser
     map <C-n> :NERDTreeToggle<CR>
 
 Plug 'https://github.com/scrooloose/nerdcommenter' " (un)comment easily
+    let g:NERDSpaceDelims = 1
+    let g:NERDCompactSexyComs = 1
+    let g:NERDCommentEmptyLines = 1
     map , <plug>NERDCommenterToggle
+    map g; :call NERDComment('n', 'Append')<CR>
 
 Plug 'https://github.com/crusoexia/vim-monokai' " monokai theme
 
@@ -64,8 +67,8 @@ Plug 'https://github.com/itchyny/lightline.vim' " nice statusline
 Plug 'https://github.com/drmingdrmer/vim-tabbar' " opened files in tabs
     let g:vimtabbar_pattern=' {path}  '
 
-"Plug 'https://github.com/jaxbot/semantic-highlight.vim' " it overrides some keywords :/
-    "let g:semanticTermColors = [211, 213, 217, 219, 223, 225, 230, 231]
+" Plug 'https://github.com/jaxbot/semantic-highlight.vim' " it overrides some keywords :/
+    " let g:semanticTermColors = [211, 213, 217, 219, 223, 225, 230, 231]
 
 call plug#end()
 
