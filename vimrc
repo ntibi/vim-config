@@ -62,8 +62,19 @@ Plug 'https://github.com/itchyny/lightline.vim' " nice statusline
                     \'t'      : 'TER'},
                 \}
 
-Plug 'https://github.com/drmingdrmer/vim-tabbar' " opened files in tabs
-    let g:vimtabbar_pattern=' {path}  '
+Plug 'https://github.com/ap/vim-buftabline'
+    let g:buftabline_show = 1
+    let g:buftabline_indicators = 1
+    nmap g1 <plug>BufTabLine.Go(1)
+    nmap g2 <plug>BufTabLine.Go(2)
+    nmap g3 <plug>BufTabLine.Go(3)
+    nmap g4 <plug>BufTabLine.Go(4)
+    nmap g5 <plug>BufTabLine.Go(5)
+    nmap g6 <plug>BufTabLine.Go(6)
+    nmap g7 <plug>BufTabLine.Go(7)
+    nmap g8 <plug>BufTabLine.Go(8)
+    nmap g9 <plug>BufTabLine.Go(9)
+    nmap g0 <plug>BufTabLine.Go(10)
 
 " Plug 'https://github.com/jaxbot/semantic-highlight.vim' " it overrides some keywords :/
     " let g:semanticTermColors = [211, 213, 217, 219, 223, 225, 230, 231]
@@ -77,6 +88,7 @@ augroup vimrc " Changes to the colorscheme
     autocmd ColorScheme *  hi TabLine      cterm=none  ctermfg=130  ctermbg=235
                         \| hi TabLineSel   cterm=none  ctermfg=202  ctermbg=238
                         \| hi TabLineFill  cterm=none  ctermfg=245  ctermbg=235
+                        \| hi PmenuSel     cterm=none  ctermfg=166  ctermbg=236
 augroup END
 
 catch
