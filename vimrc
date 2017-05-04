@@ -133,6 +133,8 @@ set t_Co=256
 
 set laststatus=2
 
+set hidden
+
 
 """ REMAPS:
 
