@@ -34,6 +34,7 @@ Plug 'https://github.com/scrooloose/nerdtree' " fs browser
     map <C-n> :NERDTreeToggle<CR>
     let g:NERDTreeDirArrowExpandable = '+'
     let g:NERDTreeDirArrowCollapsible = '-'
+    let NERDTreeMinimalUI = 1
 
 Plug 'https://github.com/scrooloose/nerdcommenter' " (un)comment easily
     let g:NERDSpaceDelims = 1
