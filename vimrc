@@ -32,6 +32,8 @@ Plug 'https://github.com/airblade/vim-gitgutteR' " git status in line gutter
 
 Plug 'https://github.com/scrooloose/nerdtree' " fs browser
     map <C-n> :NERDTreeToggle<CR>
+    let g:NERDTreeDirArrowExpandable = '+'
+    let g:NERDTreeDirArrowCollapsible = '-'
 
 Plug 'https://github.com/scrooloose/nerdcommenter' " (un)comment easily
     let g:NERDSpaceDelims = 1
