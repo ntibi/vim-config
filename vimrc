@@ -62,7 +62,7 @@ Plug 'https://github.com/itchyny/lightline.vim' " nice statusline
                     \'t'      : 'TER'},
                 \}
 
-Plug 'https://github.com/ap/vim-buftabline'
+Plug 'https://github.com/ap/vim-buftabline' " nice tabs
     let g:buftabline_show = 1
     let g:buftabline_indicators = 1
     nmap g1 <plug>BufTabLine.Go(1)
@@ -75,6 +75,9 @@ Plug 'https://github.com/ap/vim-buftabline'
     nmap g8 <plug>BufTabLine.Go(8)
     nmap g9 <plug>BufTabLine.Go(9)
     nmap g0 <plug>BufTabLine.Go(10)
+
+Plug 'https://github.com/jiangmiao/auto-pairs' " auto-pair
+    let g:AutoPairs = { '(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`', '<': '>' }
 
 " Plug 'https://github.com/jaxbot/semantic-highlight.vim' " it overrides some keywords :/
     " let g:semanticTermColors = [211, 213, 217, 219, 223, 225, 230, 231]
@@ -166,14 +169,6 @@ nnoremap J :bprevious<CR>
 nnoremap K :bnext<CR>
 
 vnoremap <C-n> :normal 
-
-" autopair
-inoremap '' ''<Left>
-inoremap "" ""<Left>
-inoremap () ()<Left>
-inoremap [] []<Left>
-inoremap <> <><Left>
-inoremap {} {}<Left>
 
 " hjkl in cmd mode
 cnoremap <C-h> <Left>
