@@ -79,6 +79,8 @@ Plug 'https://github.com/ap/vim-buftabline' " nice tabs
 Plug 'https://github.com/jiangmiao/auto-pairs' " auto-pair
     let g:AutoPairs = { '(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`', '<': '>' }
 
+Plug 'https://github.com/ctrlpvim/ctrlp.vim'
+
 " Plug 'https://github.com/jaxbot/semantic-highlight.vim' " it overrides some keywords :/
     " let g:semanticTermColors = [211, 213, 217, 219, 223, 225, 230, 231]
 
@@ -193,6 +195,8 @@ nnoremap glr :set relativenumber!<CR>
 
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
+
+noremap <leader>p :set invpaste paste?<CR>
 
 
 """ VISUALS:
