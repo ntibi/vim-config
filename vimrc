@@ -170,7 +170,7 @@ vnoremap <M-down> :move '>+1<CR>gv
 nnoremap J :bprevious<CR>
 nnoremap K :bnext<CR>
 
-vnoremap <C-n> :normal 
+vnoremap @ :normal @
 
 " hjkl in cmd mode
 cnoremap <C-h> <Left>
