@@ -81,6 +81,12 @@ Plug 'https://github.com/jiangmiao/auto-pairs' " auto-pair
 
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 
+Plug 'https://github.com/easymotion/vim-easymotion'
+    let g:EasyMotion_do_mapping = 0
+    let g:EasyMotion_do_shade = 0
+    map <C-f> <Plug>(easymotion-bd-f)
+    let g:EasyMotion_keys = 'ajsklhdfgweoincvb'
+
 " Plug 'https://github.com/jaxbot/semantic-highlight.vim' " it overrides some keywords :/
     " let g:semanticTermColors = [211, 213, 217, 219, 223, 225, 230, 231]
 
