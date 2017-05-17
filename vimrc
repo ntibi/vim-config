@@ -77,7 +77,7 @@ Plug 'https://github.com/ap/vim-buftabline' " nice tabs
     nmap g0 <plug>BufTabLine.Go(10)
 
 Plug 'https://github.com/jiangmiao/auto-pairs' " auto-pair
-    let g:AutoPairs = { '(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`', '<': '>' }
+    let g:AutoPairs = { '(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`' }
 
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 
