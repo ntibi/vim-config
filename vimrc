@@ -204,6 +204,8 @@ cnoremap <C-e> <End>
 
 noremap <leader>p :set invpaste paste?<CR>
 
+noremap Y y$
+
 
 """ VISUALS:
 
