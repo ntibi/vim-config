@@ -161,10 +161,13 @@ vnoremap <C-k> <C-u>
 noremap <C-l> <C-l>:nohlsearch<CR>
 
 " C-[ae] for beginning/end of line
-nnoremap <C-a> 0
-nnoremap <C-e> $
+noremap <C-a> 0
+noremap <C-e> $
 inoremap <C-a> <C-o>0
 inoremap <C-e> <C-o>$
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+
 
 " move text faster
 nnoremap <M-up> :move -2<CR>
@@ -198,9 +201,6 @@ cnoremap w!! w !sudo tee % > /dev/null
 
 nnoremap gll :set number!<CR>
 nnoremap glr :set relativenumber!<CR>
-
-cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
 
 noremap <leader>p :set invpaste paste?<CR>
 
