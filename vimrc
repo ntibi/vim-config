@@ -206,6 +206,8 @@ noremap <leader>p :set invpaste paste?<CR>
 
 noremap Y y$
 
+noremap _ "_
+
 
 """ VISUALS:
 
