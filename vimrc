@@ -103,7 +103,7 @@ augroup vimrc " Changes to the colorscheme
 augroup END
 
 catch
-    echo v:exception
+    echo "catched exception: " v:exception
 endtry
 
 

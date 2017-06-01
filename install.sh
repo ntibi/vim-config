@@ -33,4 +33,7 @@ fi
 
 [ ! -e ~/.vim/autoload/plug.vim ] && curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+[ ! -d ~/.config/nvim/ ] && mkdir -p ~/.config/nvim/
+[ ! -e ~/.config/nvim/init.vim ] && ln -s $REPO_BASE/init.vim ~/.config/nvim/init.vim
+
 echo "Done"
