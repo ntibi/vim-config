@@ -208,6 +208,25 @@ noremap Y y$
 
 noremap _ "_
 
+noremap <leader>w :w<CR>
+noremap <leader>W :wa<CR>
+noremap <leader>q :qa!<CR>
+noremap <leader>d :bd<CR>
+noremap <leader>b :buffers<CR>:buffer 
+noremap <leader>l :buffers<CR>
+
+noremap <leader><space> :b#<CR>
+noremap <leader>1 :buffer 1<CR>
+noremap <leader>2 :buffer 2<CR>
+noremap <leader>3 :buffer 3<CR>
+noremap <leader>4 :buffer 4<CR>
+noremap <leader>5 :buffer 5<CR>
+noremap <leader>6 :buffer 6<CR>
+noremap <leader>7 :buffer 7<CR>
+noremap <leader>8 :buffer 8<CR>
+noremap <leader>9 :buffer 9<CR>
+noremap <leader>0 :buffer 10<CR>
+
 
 """ VISUALS:
 
