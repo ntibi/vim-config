@@ -79,8 +79,6 @@ Plug 'https://github.com/ap/vim-buftabline' " nice tabs
 Plug 'https://github.com/jiangmiao/auto-pairs' " auto-pair
     let g:AutoPairs = { '(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`' }
 
-Plug 'https://github.com/ctrlpvim/ctrlp.vim'
-
 Plug 'https://github.com/easymotion/vim-easymotion'
     let g:EasyMotion_do_mapping = 0
     let g:EasyMotion_do_shade = 0
@@ -158,7 +156,7 @@ vnoremap <C-j> <C-d>
 vnoremap <C-k> <C-u>
 
 "clear highlight on redraw
-noremap <C-l> <C-l>:nohlsearch<CR>
+noremap <C-l> zz<C-l>:nohlsearch<CR>
 
 " C-[ae] for beginning/end of line
 noremap <C-a> 0
@@ -197,7 +195,6 @@ nnoremap U <C-r>
 
 " write file opened in non-root
 cnoremap w!! w !sudo tee % > /dev/null
-
 
 nnoremap gll :set number!<CR>
 nnoremap glr :set relativenumber!<CR>
