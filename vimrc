@@ -41,7 +41,7 @@ Plug 'https://github.com/scrooloose/nerdcommenter' " (un)comment easily
     let g:NERDCompactSexyComs = 0
     let g:NERDCommentEmptyLines = 1
     map , <plug>NERDCommenterToggle
-    map g; :call NERDComment('n', 'Append')<CR>
+    map gc :call NERDComment('n', 'Append')<CR>
 
 Plug 'https://github.com/crusoexia/vim-monokai' " monokai theme
 
