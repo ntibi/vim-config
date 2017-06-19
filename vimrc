@@ -213,7 +213,7 @@ noremap <leader>b :buffers<CR>:buffer
 noremap <leader>l :buffers<CR>
 noremap <leader>r :registers<CR>
 
-noremap <leader><space> :buffer#<CR>
+noremap <leader>; :buffer#<CR>
 noremap <leader>1 :buffer 1<CR>
 noremap <leader>2 :buffer 2<CR>
 noremap <leader>3 :buffer 3<CR>
