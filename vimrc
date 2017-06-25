@@ -210,6 +210,7 @@ noremap <leader>W :wa<CR>
 noremap <leader>q :qa!<CR>
 noremap <leader>d :bd<CR>
 noremap <leader>b :buffers<CR>:buffer 
+noremap <leader>e :edit 
 noremap <leader>l :buffers<CR>
 noremap <leader>r :registers<CR>
 
