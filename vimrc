@@ -43,8 +43,8 @@ if exists(':Plug')
     let g:NERDSpaceDelims = 1
     let g:NERDCompactSexyComs = 0
     let g:NERDCommentEmptyLines = 1
-    map z; <plug>NERDCommenterToggle
-    map gc :call NERDComment('n', 'Append')<CR>
+    map ;c <plug>NERDCommenterToggle
+    map ;a :call NERDComment('n', 'Append')<CR>
 
     Plug 'https://github.com/crusoexia/vim-monokai' " monokai theme
 
@@ -226,6 +226,10 @@ noremap <leader>7 :buffer 7<CR>
 noremap <leader>8 :buffer 8<CR>
 noremap <leader>9 :buffer 9<CR>
 noremap <leader>0 :buffer 10<CR>
+
+noremap ;w ;
+noremap ;b ,
+noremap ;; :
 
 
 """ VISUALS:
