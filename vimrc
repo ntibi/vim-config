@@ -27,7 +27,7 @@ if exists(':Plug')
     Plug 'https://github.com/justinmk/vim-syntax-extra' " more syntax highlight definitions
 
     Plug 'https://github.com/airblade/vim-gitgutteR' " git status in line gutter
-    noremap glg :GitGutterToggle<CR>
+    noremap <leader>tg :GitGutterToggle<CR>
     nmap ]h <plug>GitGutterNextHunk
     nmap [h <plug>GitGutterPrevHunk
     nmap ghs <plug>GitGutterStageHunk
@@ -88,7 +88,20 @@ if exists(':Plug')
     map <C-f> <Plug>(easymotion-bd-f)
     let g:EasyMotion_keys = 'ajsklhdfgweoincvb'
 
-" Plug 'https://github.com/jaxbot/semantic-highlight.vim' " it overrides some keywords :/
+    Plug 'https://github.com/vim-syntastic/syntastic'
+    let g:syntastic_c_check_header = 1
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+    function! SyntasticCheckHook(errors)
+        if !empty(a:errors)
+            let g:syntastic_loc_list_height = min([len(a:errors), 10])
+        endif
+    endfunction
+    noremap <leader>ts :SyntasticToggleMode<CR>
+
+    " Plug 'https://github.com/jaxbot/semantic-highlight.vim' " it overrides some keywords :/
     " let g:semanticTermColors = [211, 213, 217, 219, 223, 225, 230, 231]
 
     call plug#end()
