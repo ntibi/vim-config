@@ -2,17 +2,20 @@
 
 try
 call plug#begin('~/.vim/plugged')
+catch
+endtry
 
-Plug 'https://github.com/luochen1990/rainbow' " rainbow paren
+if exists(':Plug')
+    Plug 'https://github.com/luochen1990/rainbow' " rainbow paren
     let g:rainbow_active = 1
 
-Plug 'https://github.com/itchyny/vim-cursorword' " underline all matches of the word at point
+    Plug 'https://github.com/itchyny/vim-cursorword' " underline all matches of the word at point
 
-Plug 'https://github.com/vim-scripts/a.vim' " :A to open corresponding .{c,h,cpp,hpp}
+    Plug 'https://github.com/vim-scripts/a.vim' " :A to open corresponding .{c,h,cpp,hpp}
 
-Plug 'https://github.com/godlygeek/tabular' " :Tabularize (M-x align)
+    Plug 'https://github.com/godlygeek/tabular' " :Tabularize (M-x align)
 
-Plug 'https://github.com/mbbill/undotree' " undo tree
+    Plug 'https://github.com/mbbill/undotree' " undo tree
     noremap <C-x>u :UndotreeToggle<CR>
     let g:undotree_SetFocusWhenToggle=1
     let g:undotree_WindowLayout=4
@@ -21,48 +24,48 @@ Plug 'https://github.com/mbbill/undotree' " undo tree
         nmap <buffer> u <plug>UndotreeGoPreviousState
     endfunc
 
-Plug 'https://github.com/justinmk/vim-syntax-extra' " more syntax highlight definitions
+    Plug 'https://github.com/justinmk/vim-syntax-extra' " more syntax highlight definitions
 
-Plug 'https://github.com/airblade/vim-gitgutteR' " git status in line gutter
+    Plug 'https://github.com/airblade/vim-gitgutteR' " git status in line gutter
     noremap glg :GitGutterToggle<CR>
     nmap ]h <plug>GitGutterNextHunk
     nmap [h <plug>GitGutterPrevHunk
     nmap ghs <plug>GitGutterStageHunk
     nmap ghS <plug>GitGutterUndoHunk
 
-Plug 'https://github.com/scrooloose/nerdtree' " fs browser
+    Plug 'https://github.com/scrooloose/nerdtree' " fs browser
     map <C-n> :NERDTreeToggle<CR>
     let g:NERDTreeDirArrowExpandable = '+'
     let g:NERDTreeDirArrowCollapsible = '-'
     let NERDTreeMinimalUI = 1
 
-Plug 'https://github.com/scrooloose/nerdcommenter' " (un)comment easily
+    Plug 'https://github.com/scrooloose/nerdcommenter' " (un)comment easily
     let g:NERDSpaceDelims = 1
     let g:NERDCompactSexyComs = 0
     let g:NERDCommentEmptyLines = 1
     map , <plug>NERDCommenterToggle
     map gc :call NERDComment('n', 'Append')<CR>
 
-Plug 'https://github.com/crusoexia/vim-monokai' " monokai theme
+    Plug 'https://github.com/crusoexia/vim-monokai' " monokai theme
 
-Plug 'https://github.com/itchyny/lightline.vim' " nice statusline
-" disable lightline.tabline to use vim-tabbar
+    Plug 'https://github.com/itchyny/lightline.vim' " nice statusline
+    " disable lightline.tabline to use vim-tabbar
     let g:lightline = {
                 \'enable': { 'tabline': 0 },
                 \'mode_map': {
-                    \'n'      : 'NOR',
-                    \'i'      : 'INS',
-                    \'R'      : 'REP',
-                    \'v'      : 'VIS',
-                    \'V'      : 'V-L',
-                    \"\<C-v>" : 'V-B',
-                    \'c'      : 'CMD',
-                    \'S'      : 'S-L',
-                    \"\<C-s>" : 'S-B',
-                    \'t'      : 'TER'},
+                \'n'      : 'NOR',
+                \'i'      : 'INS',
+                \'R'      : 'REP',
+                \'v'      : 'VIS',
+                \'V'      : 'V-L',
+                \"\<C-v>" : 'V-B',
+                \'c'      : 'CMD',
+                \'S'      : 'S-L',
+                \"\<C-s>" : 'S-B',
+                \'t'      : 'TER'},
                 \}
 
-Plug 'https://github.com/ap/vim-buftabline' " nice tabs
+    Plug 'https://github.com/ap/vim-buftabline' " nice tabs
     let g:buftabline_show = 1
     let g:buftabline_indicators = 1
     nmap g1 <plug>BufTabLine.Go(1)
@@ -76,10 +79,10 @@ Plug 'https://github.com/ap/vim-buftabline' " nice tabs
     nmap g9 <plug>BufTabLine.Go(9)
     nmap g0 <plug>BufTabLine.Go(10)
 
-Plug 'https://github.com/jiangmiao/auto-pairs' " auto-pair
+    Plug 'https://github.com/jiangmiao/auto-pairs' " auto-pair
     let g:AutoPairs = { '(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`' }
 
-Plug 'https://github.com/easymotion/vim-easymotion'
+    Plug 'https://github.com/easymotion/vim-easymotion'
     let g:EasyMotion_do_mapping = 0
     let g:EasyMotion_do_shade = 0
     map <C-f> <Plug>(easymotion-bd-f)
@@ -88,7 +91,8 @@ Plug 'https://github.com/easymotion/vim-easymotion'
 " Plug 'https://github.com/jaxbot/semantic-highlight.vim' " it overrides some keywords :/
     " let g:semanticTermColors = [211, 213, 217, 219, 223, 225, 230, 231]
 
-call plug#end()
+    call plug#end()
+endif
 
 colorscheme monokai
 
@@ -99,10 +103,6 @@ augroup vimrc " Changes to the colorscheme
                         \| hi TabLineFill  cterm=none  ctermfg=245  ctermbg=235
                         \| hi PmenuSel     cterm=none  ctermfg=166  ctermbg=236
 augroup END
-
-catch
-    echo "catched exception: " v:exception
-endtry
 
 
 """ OPTIONS:
@@ -143,6 +143,9 @@ set t_Co=256
 set laststatus=2
 
 set hidden
+
+set nocursorcolumn
+set nocursorline
 
 
 """ REMAPS:
