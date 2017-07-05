@@ -43,7 +43,7 @@ if exists(':Plug')
     let g:NERDSpaceDelims = 1
     let g:NERDCompactSexyComs = 0
     let g:NERDCommentEmptyLines = 1
-    map , <plug>NERDCommenterToggle
+    map z; <plug>NERDCommenterToggle
     map gc :call NERDComment('n', 'Append')<CR>
 
     Plug 'https://github.com/crusoexia/vim-monokai' " monokai theme
@@ -149,8 +149,6 @@ set nocursorline
 
 
 """ REMAPS:
-
-noremap ; :
 
 " scroll half-screen
 nnoremap <C-j> <C-d>
