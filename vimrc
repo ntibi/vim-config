@@ -104,6 +104,21 @@ augroup vimrc " Changes to the colorscheme
                         \| hi PmenuSel     cterm=none  ctermfg=166  ctermbg=236
 augroup END
 
+augroup DisableMappings " disable not-yet-loaded plugin mapping
+    autocmd! VimEnter *     :unmap <leader>cc
+                        \|  :unmap <leader>ca
+                        \|  :unmap <leader>cu
+                        \|  :unmap <leader>cb
+                        \|  :unmap <leader>cl
+                        \|  :unmap <leader>cA
+                        \|  :unmap <leader>cy
+                        \|  :unmap <leader>cs
+                        \|  :unmap <leader>ci
+                        \|  :unmap <leader>c$
+                        \|  :unmap <leader>cn
+                        \|  :unmap <leader>cm
+augroup END
+
 
 """ OPTIONS:
 
