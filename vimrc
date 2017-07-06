@@ -89,7 +89,19 @@ if exists(':Plug')
     let g:EasyMotion_keys = 'ajsklhdfgweoincvb'
 
     Plug 'https://github.com/vim-syntastic/syntastic'
+    let g:syntastic_c_include_dirs = ['./', './include', '../include']
+    let g:syntastic_c_compiler_options = '-std=gnu99 -pedantic -Wall -Wextra'
     let g:syntastic_c_check_header = 1
+
+    let g:syntastic_cpp_include_dirs = ['./', './include', '../include']
+    let g:syntastic_cpp_compiler_options = "-std=c++11 -pedantic -Wall -Wextra"
+    let g:syntastic_cpp_check_header = 1
+
+    let g:syntastic_asm_dialect = 'intel'
+    if executable('nasm')
+        autocmd BufNewFile,BufRead *.[sS] set filetype=nasm
+    endif
+
     let g:syntastic_always_populate_loc_list = 1
     let g:syntastic_auto_loc_list = 1
     let g:syntastic_check_on_open = 1
