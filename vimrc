@@ -286,6 +286,8 @@ noremap <leader>8 :buffer 8<CR>
 noremap <leader>9 :buffer 9<CR>
 noremap <leader>0 :buffer 10<CR>
 
+noremap <C-w>; <C-w>p
+
 noremap ;w ;
 noremap ;b ,
 noremap ;; :
