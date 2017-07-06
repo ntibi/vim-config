@@ -142,6 +142,7 @@ augroup vimrc " Changes to the colorscheme
                         \| hi TabLineSel   cterm=none  ctermfg=202  ctermbg=238
                         \| hi TabLineFill  cterm=none  ctermfg=245  ctermbg=235
                         \| hi PmenuSel     cterm=none  ctermfg=166  ctermbg=236
+                        \| hi Search       cterm=none  ctermfg=234  ctermbg=214
 augroup END
 
 augroup DisableMappings " disable not-yet-loaded plugin mapping
