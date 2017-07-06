@@ -203,6 +203,9 @@ set hidden
 set nocursorcolumn
 set nocursorline
 
+set nobackup
+set noswapfile
+
 
 """ REMAPS:
 
