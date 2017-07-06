@@ -90,17 +90,32 @@ if exists(':Plug')
 
     Plug 'https://github.com/vim-syntastic/syntastic'
     let g:syntastic_c_include_dirs = ['./', './include', '../include']
-    let g:syntastic_c_compiler_options = '-std=gnu99 -pedantic -Wall -Wextra'
+    let g:syntastic_c_compiler_options = '-std=gnu99 -pedantic -Wall -Wextra -masm=intel'
     let g:syntastic_c_check_header = 1
 
     let g:syntastic_cpp_include_dirs = ['./', './include', '../include']
-    let g:syntastic_cpp_compiler_options = "-std=c++11 -pedantic -Wall -Wextra"
+    let g:syntastic_cpp_compiler_options = "-std=c++11 -pedantic -Wall -Wextra -masm=intel"
     let g:syntastic_cpp_check_header = 1
 
+    function SyntasticGcc()
+        let g:syntastic_asm_compiler = 'gcc'
+    endfunction
+    function SyntasticClang()
+        let g:syntastic_asm_compiler = 'clang'
+    endfunction
+
+    function SyntasticOsDev() " kernel developpement mode
+        let g:syntastic_cpp_compiler_options = '-pedantic -Wall -Wextra -ffreestanding -nostdlib -masm=intel -fno-exceptions -fno-rtti -fno-builtin -fno-stack-protector -nodefaultlibs'
+        let g:syntastic_c_compiler_options = '-std=gnu99 -pedantic -Wall -Wextra -ffreestanding -nostdlib -masm=intel'
+    endfunction
+
     let g:syntastic_asm_dialect = 'intel'
-    if executable('nasm')
-        autocmd BufNewFile,BufRead *.[sS] set filetype=nasm
-    endif
+    function SyntasticNasm()
+        let g:syntastic_asm_compiler = 'nasm'
+    endfunction
+    function SyntasticAs()
+        let g:syntastic_asm_compiler = 'gcc'
+    endfunction
 
     let g:syntastic_always_populate_loc_list = 1
     let g:syntastic_auto_loc_list = 1
