@@ -258,6 +258,8 @@ cnoremap w!! w !sudo tee % > /dev/null
 
 nnoremap gll :set number!<CR>
 nnoremap glr :set relativenumber!<CR>
+nnoremap <leader>tn :set number!<CR>
+nnoremap <leader>tr :set relativenumber!<CR>
 
 noremap <leader>p :set invpaste paste?<CR>
 
