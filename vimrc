@@ -276,6 +276,9 @@ noremap <leader>e :edit
 noremap <leader>l :buffers<CR>
 noremap <leader>r :registers<CR>
 
+noremap <leader>o o<Esc>
+noremap <leader>O O<Esc>
+
 noremap <leader>; :buffer#<CR>
 noremap <leader>1 :buffer 1<CR>
 noremap <leader>2 :buffer 2<CR>
