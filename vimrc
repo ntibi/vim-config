@@ -12,6 +12,7 @@ if exists(':Plug')
     Plug 'https://github.com/itchyny/vim-cursorword' " underline all matches of the word at point
 
     Plug 'https://github.com/vim-scripts/a.vim' " :A to open corresponding .{c,h,cpp,hpp}
+    noremap <leader>h :A<CR>
 
     Plug 'https://github.com/godlygeek/tabular' " :Tabularize (M-x align)
 
