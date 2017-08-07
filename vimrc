@@ -277,6 +277,8 @@ noremap <leader>e :edit
 noremap <leader>l :buffers<CR>
 noremap <leader>r :registers<CR>
 
+noremap <leader>s :s///g<left><left><left>
+
 noremap <leader>o o<Esc>
 noremap <leader>O O<Esc>
 
@@ -294,9 +296,12 @@ noremap <leader>0 :buffer 10<CR>
 
 noremap <C-w>; <C-w>p
 
+" replace ; and , by ;w and ;b
 noremap ;w ;
 noremap ;b ,
+
 noremap ;; :
+noremap <leader>\ :
 
 
 """ VISUALS:
