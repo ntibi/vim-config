@@ -217,7 +217,7 @@ vnoremap <C-j> <C-d>
 vnoremap <C-k> <C-u>
 
 "clear highlight on redraw
-noremap <C-l> zz<C-l>:nohlsearch<CR>
+noremap <silent> <C-l> zz<C-l>:nohlsearch<CR>
 
 " C-[ae] for beginning/end of line
 noremap <C-a> 0
