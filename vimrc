@@ -294,14 +294,58 @@ noremap <leader>8 :buffer 8<CR>
 noremap <leader>9 :buffer 9<CR>
 noremap <leader>0 :buffer 10<CR>
 
-noremap <C-w>; <C-w>p
-
 " replace ; and , by ;w and ;b
 noremap ;w ;
 noremap ;b ,
 
 noremap ;; :
 noremap <leader>\ :
+
+
+""" TMUX STUFF:
+
+if exists('$TMUX')
+    let g:in_tmux = 1
+else
+    let g:in_tmux = 0
+endif
+
+let g:tmux_command = {
+            \'h': 'select-pane -L',
+            \'j': 'select-pane -D',
+            \'k': 'select-pane -U',
+            \'l': 'select-pane -L',
+            \'p': 'last-pane',
+            \'w': 'select-pane -l',
+            \}
+
+function! TmuxCmd(direction)
+    silent execute '!' . 'tmux ' . g:tmux_command[a:direction]
+endfunction
+
+function! WinCmd(direction)
+    silent execute 'wincmd ' . a:direction
+endfunction
+
+function! TmuxAwareWinCmd(direction)
+    if !g:in_tmux
+        call WinCmd(a:direction)
+    else
+        let current_win = winnr()
+        call WinCmd(a:direction)
+        if current_win == winnr()
+            call TmuxCmd(a:direction)
+        endif
+    endif
+endfunction
+
+noremap <silent> <C-w>h :call TmuxAwareWinCmd('h')<CR>
+noremap <silent> <C-w>j :call TmuxAwareWinCmd('j')<CR>
+noremap <silent> <C-w>k :call TmuxAwareWinCmd('k')<CR>
+noremap <silent> <C-w>l :call TmuxAwareWinCmd('l')<CR>
+
+noremap <silent> <C-w>; :call TmuxAwareWinCmd('p')<CR>
+noremap <silent> <C-w><C-w> :call TmuxAwareWinCmd('w')<CR>
 
 
 """ VISUALS:
