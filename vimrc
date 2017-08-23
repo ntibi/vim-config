@@ -268,6 +268,8 @@ noremap Y y$
 
 noremap _ "_
 
+noremap g{ O{<Esc>jo}<Esc>=%j
+
 noremap <leader>w :w<CR>
 noremap <leader>W :wa<CR>
 noremap <leader>q :qa!<CR>
