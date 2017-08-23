@@ -79,7 +79,7 @@ if exists(':Plug')
     nmap g8 <plug>BufTabLine.Go(8)
     nmap g9 <plug>BufTabLine.Go(9)
     nmap g0 <plug>BufTabLine.Go(10)
-    noremap <leader>tt :call buftabline#update(0)
+    noremap <leader>tt :call buftabline#update(0)<CR>
 
     Plug 'https://github.com/jiangmiao/auto-pairs' " auto-pair
     let g:AutoPairs = { '(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`' }
