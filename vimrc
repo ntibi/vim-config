@@ -125,7 +125,7 @@ if exists(':Plug')
     let g:syntastic_check_on_wq = 0
     function! SyntasticCheckHook(errors)
         if !empty(a:errors)
-            let g:syntastic_loc_list_height = min([len(a:errors), 10])
+            let g:syntastic_loc_list_height = min([len(a:errors), winheight('%') / 6])
         endif
     endfunction
     noremap <leader>ts :SyntasticToggleMode<CR>
