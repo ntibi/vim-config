@@ -271,6 +271,8 @@ noremap _ "_
 
 noremap g{ O{<Esc>jo}<Esc>=%j
 
+noremap gj J
+
 noremap <leader>w :w<CR>
 noremap <leader>W :wa<CR>
 noremap <leader>q :qa!<CR>
