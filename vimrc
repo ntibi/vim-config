@@ -208,6 +208,7 @@ set nocursorline
 set nobackup
 set noswapfile
 
+set foldmethod=syntax
 
 """ REMAPS:
 
