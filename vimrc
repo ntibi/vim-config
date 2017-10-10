@@ -307,6 +307,8 @@ noremap ;b ,
 noremap ;; :
 noremap <leader>\ :
 
+noremap <silent> gb :execute "!git blame -L" . line(".") . ",+1 %"<CR>
+
 
 """ TMUX STUFF:
 
