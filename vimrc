@@ -300,6 +300,16 @@ noremap <leader>8 :buffer 8<CR>
 noremap <leader>9 :buffer 9<CR>
 noremap <leader>0 :buffer 10<CR>
 
+function ToggleFoldAll() " toggles folding
+    if &foldlevel
+        normal zM
+    else
+        normal zR
+    endif
+endfunction
+noremap <silent> <leader>Z :call ToggleFoldAll()<CR>
+noremap <leader>z zA
+
 " replace ; and , by ;w and ;b
 noremap ;w ;
 noremap ;b ,
