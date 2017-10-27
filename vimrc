@@ -20,7 +20,7 @@ if exists(':Plug')
     noremap <C-x>u :UndotreeToggle<CR>
     let g:undotree_SetFocusWhenToggle=1
     let g:undotree_WindowLayout=4
-    function g:Undotree_CustomMap()
+    function! g:Undotree_CustomMap()
         nmap <buffer> U <plug>UndotreeGoNextState
         nmap <buffer> u <plug>UndotreeGoPreviousState
     endfunc
@@ -99,23 +99,23 @@ if exists(':Plug')
     let g:syntastic_cpp_compiler_options = "-std=c++11 -pedantic -Wall -Wextra -masm=intel"
     let g:syntastic_cpp_check_header = 1
 
-    function SyntasticGcc()
+    function! SyntasticGcc()
         let g:syntastic_asm_compiler = 'gcc'
     endfunction
-    function SyntasticClang()
+    function! SyntasticClang()
         let g:syntastic_asm_compiler = 'clang'
     endfunction
 
-    function SyntasticOsDev() " kernel developpement mode
+    function! SyntasticOsDev() " kernel developpement mode
         let g:syntastic_cpp_compiler_options = '-pedantic -Wall -Wextra -ffreestanding -nostdlib -masm=intel -fno-exceptions -fno-rtti -fno-builtin -fno-stack-protector -nodefaultlibs'
         let g:syntastic_c_compiler_options = '-std=gnu99 -pedantic -Wall -Wextra -ffreestanding -nostdlib -masm=intel'
     endfunction
 
     let g:syntastic_asm_dialect = 'intel'
-    function SyntasticNasm()
+    function! SyntasticNasm()
         let g:syntastic_asm_compiler = 'nasm'
     endfunction
-    function SyntasticAs()
+    function! SyntasticAs()
         let g:syntastic_asm_compiler = 'gcc'
     endfunction
 
@@ -300,7 +300,7 @@ noremap <leader>8 :buffer 8<CR>
 noremap <leader>9 :buffer 9<CR>
 noremap <leader>0 :buffer 10<CR>
 
-function ToggleFoldAll() " toggles folding
+function! ToggleFoldAll() " toggles folding
     if &foldlevel
         normal zM
     else
