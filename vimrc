@@ -50,20 +50,44 @@ if exists(':Plug')
     Plug 'https://github.com/crusoexia/vim-monokai' " monokai theme
 
     Plug 'https://github.com/itchyny/lightline.vim' " nice statusline
+    " functions for component_function:
+    function! PassiveOrActive()
+        if exists('g:syntastic_mode_map')
+            if g:syntastic_mode_map['mode'] == 'active'
+                return 'A'
+            else
+                return 'p'
+            endif
+        else
+            return ' '
+        endif
+    endfunction
     " disable lightline.tabline to use vim-tabbar
     let g:lightline = {
-                \'enable': { 'tabline': 0 },
+                \'colorscheme': 'powerline',
+                \'enable': { 'statusline': 1, 'tabline': 0 },
+                \'active': {
+                \               'left': [ ['mode', 'paste'], ['readonly', 'filename', 'branch', 'modified'] ],
+                \               'right': [ ['lineinfo'], ['percent'], ['syntastic', 'fileformat', 'fileencoding', 'filetype'] ]
+                \          },
+                \'component':   {
+                \                'dot': '"%{@.}"',
+                \               },
+                \'component_function':   {
+                \                'syntastic': 'PassiveOrActive',
+                \               },
                 \'mode_map': {
-                \'n'      : 'NOR',
-                \'i'      : 'INS',
-                \'R'      : 'REP',
-                \'v'      : 'VIS',
-                \'V'      : 'V-L',
-                \"\<C-v>" : 'V-B',
-                \'c'      : 'CMD',
-                \'S'      : 'S-L',
-                \"\<C-s>" : 'S-B',
-                \'t'      : 'TER'},
+                \               'n'      : 'NOR',
+                \               'i'      : 'INS',
+                \               'R'      : 'REP',
+                \               'v'      : 'VIS',
+                \               'V'      : 'V-L',
+                \               "\<C-v>" : 'V-B',
+                \               'c'      : 'CMD',
+                \               'S'      : 'S-L',
+                \               "\<C-s>" : 'S-B',
+                \               't'      : 'TER',
+                \            },
                 \}
 
     Plug 'https://github.com/ap/vim-buftabline' " nice tabs
