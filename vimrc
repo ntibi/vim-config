@@ -319,6 +319,8 @@ noremap <leader>\ :
 
 noremap <silent> gb :execute "!git blame -L" . line(".") . ",+1 %"<CR>
 
+noremap <leader>R :source ~/.vimrc<CR>
+
 
 """ TMUX STUFF:
 
