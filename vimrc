@@ -233,6 +233,7 @@ set nobackup
 set noswapfile
 
 set foldmethod=syntax
+set foldlevelstart=256
 
 """ REMAPS:
 
