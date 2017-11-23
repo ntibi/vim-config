@@ -154,6 +154,9 @@ if exists(':Plug')
     endfunction
     noremap <leader>ts :SyntasticToggleMode<CR>
 
+    Plug 'https://github.com/junegunn/fzf.vim'
+    set rtp+=~/.fzf
+
     " Plug 'https://github.com/jaxbot/semantic-highlight.vim' " it overrides some keywords :/
     " let g:semanticTermColors = [211, 213, 217, 219, 223, 225, 230, 231]
 
@@ -303,8 +306,10 @@ noremap <leader>w :w<CR>
 noremap <leader>W :wa<CR>
 noremap <leader>q :qa!<CR>
 noremap <leader>d :bd<CR>
-noremap <leader>b :buffers<CR>:buffer 
-noremap <leader>e :edit 
+" noremap <leader>b :buffers<CR>:buffer 
+noremap <leader>b :Buffers<CR>
+" noremap <leader>e :edit 
+noremap <leader>e :Files<CR>
 noremap <leader>l :buffers<CR>
 noremap <leader>r :registers<CR>
 
