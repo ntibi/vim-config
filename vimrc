@@ -162,6 +162,10 @@ if exists(':Plug')
     noremap <leader>f :Ag<CR>
     noremap <leader>h :History<CR>
 
+    Plug 'https://github.com/neomake/neomake'
+    let g:neomake_javascript_enabled_makers = ['eslint']
+    autocmd! BufWritePost,BufEnter * Neomake
+
     " Plug 'https://github.com/jaxbot/semantic-highlight.vim' " it overrides some keywords :/
     " let g:semanticTermColors = [211, 213, 217, 219, 223, 225, 230, 231]
 
