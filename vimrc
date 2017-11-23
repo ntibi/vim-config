@@ -160,6 +160,7 @@ if exists(':Plug')
     noremap <leader>l :BLines<CR>
     noremap <leader>L :Lines<CR>
     noremap <leader>f :Ag<CR>
+    noremap <leader>F :Ag <C-r>"<CR>
     noremap <leader>h :History<CR>
 
     Plug 'https://github.com/neomake/neomake'
