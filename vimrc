@@ -167,6 +167,9 @@ if exists(':Plug')
     let g:neomake_javascript_enabled_makers = ['eslint']
     autocmd! BufWritePost,BufEnter * Neomake
 
+    Plug 'https://github.com/moll/vim-node'
+    Plug 'https://github.com/jelera/vim-javascript-syntax'
+
     " Plug 'https://github.com/jaxbot/semantic-highlight.vim' " it overrides some keywords :/
     " let g:semanticTermColors = [211, 213, 217, 219, 223, 225, 230, 231]
 
@@ -359,6 +362,8 @@ noremap <silent> gb :execute "!git blame -L" . line(".") . ",+1 %"<CR>
 
 noremap <leader>R :source ~/.vimrc<CR>
 
+noremap <leader>x "+y
+noremap <leader>X "+p
 
 """ TMUX STUFF:
 
