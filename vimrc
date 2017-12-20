@@ -251,6 +251,8 @@ set noswapfile
 set foldmethod=syntax
 set foldlevelstart=256
 
+set nostartofline
+
 autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2
 
 """ REMAPS:
