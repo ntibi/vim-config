@@ -166,6 +166,14 @@ if exists(':Plug')
     Plug 'https://github.com/neomake/neomake'
     let g:neomake_javascript_enabled_makers = ['eslint']
     autocmd! BufWritePost,BufEnter * Neomake
+    augroup my_neomake_signs
+        au!
+        autocmd ColorScheme *
+            \ hi NeomakeErrorSign ctermfg=red |
+            \ hi NeomakeWarningSign ctermfg=yellow |
+            \ hi NeomakeInfoSign ctermfg=blue |
+            \ hi NeomakeMessageSign ctermfg=blue
+    augroup END
 
     Plug 'https://github.com/moll/vim-node'
     Plug 'https://github.com/jelera/vim-javascript-syntax'
