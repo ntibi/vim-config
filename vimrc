@@ -379,6 +379,9 @@ noremap <leader>R :source ~/.vimrc<CR>
 noremap <leader>x "+y
 noremap <leader>X "+p
 
+noremap [ [[
+noremap ] ]]
+
 """ TMUX STUFF:
 
 if exists('$TMUX')
