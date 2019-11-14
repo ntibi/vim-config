@@ -28,10 +28,10 @@ if exists(':Plug')
 
     Plug 'https://github.com/airblade/vim-gitgutteR' " git status in line gutter
     noremap <leader>tg :GitGutterToggle<CR>
-    nmap ]h <plug>GitGutterNextHunk
-    nmap [h <plug>GitGutterPrevHunk
-    nmap ghs <plug>GitGutterStageHunk
-    nmap ghS <plug>GitGutterUndoHunk
+    nmap ]h <plug>(GitGutterNextHunk)
+    nmap [h <plug>(GitGutterPrevHunk)
+    nmap ghs <plug>(GitGutterStageHunk)
+    nmap ghS <plug>(GitGutterUndoHunk)
 
     Plug 'https://github.com/scrooloose/nerdtree' " fs browser
     map <C-n> :NERDTreeToggle<CR>
