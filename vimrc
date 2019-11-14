@@ -183,7 +183,7 @@ if exists(':Plug')
 
     Plug 'https://github.com/dhruvasagar/vim-table-mode'
 
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     call plug#end()
 endif
