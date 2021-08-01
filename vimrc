@@ -34,9 +34,7 @@ if exists(':Plug')
     nmap ghS <plug>(GitGutterUndoHunk)
 
     Plug 'https://github.com/scrooloose/nerdtree' " fs browser
-    map <C-n> :NERDTreeToggle<CR>
-    let g:NERDTreeDirArrowExpandable = '+'
-    let g:NERDTreeDirArrowCollapsible = '-'
+    map <C-n> :NERDTreeToggle %<CR>
     let NERDTreeMinimalUI = 1
 
     Plug 'https://github.com/scrooloose/nerdcommenter' " (un)comment easily
@@ -156,7 +154,7 @@ if exists(':Plug')
     Plug 'https://github.com/junegunn/fzf.vim'
     set rtp+=~/.fzf
     noremap <leader>b :Buffers<CR>
-    noremap <leader>e :Files<CR>
+    noremap <leader>e :GFiles<CR>
     noremap <leader>l :BLines<CR>
     noremap <leader>L :Lines<CR>
     noremap <leader>f :Ag<CR>
@@ -164,7 +162,7 @@ if exists(':Plug')
     noremap <leader>h :History<CR>
 
     Plug 'https://github.com/neomake/neomake'
-    let g:neomake_javascript_enabled_makers = ['eslint']
+    " let g:neomake_javascript_enabled_makers = ['eslint']
     autocmd! BufWritePost,BufEnter * Neomake
     augroup my_neomake_signs
         au!
@@ -183,7 +181,11 @@ if exists(':Plug')
 
     Plug 'https://github.com/dhruvasagar/vim-table-mode'
 
-    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    nmap <silent> gd <Plug>(coc-definition)
+    nmap <silent> gy <Plug>(coc-type-definition)
+    nmap <silent> gi <Plug>(coc-implementation)
+    nmap <silent> gr <Plug>(coc-references)
 
     call plug#end()
 endif
@@ -266,6 +268,9 @@ set foldlevelstart=256
 set nostartofline
 
 autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2
+
+" format json w/ jq
+command Json %!jq .
 
 """ REMAPS:
 
