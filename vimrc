@@ -186,6 +186,7 @@ if exists(':Plug')
     nmap <silent> gy <Plug>(coc-type-definition)
     nmap <silent> gi <Plug>(coc-implementation)
     nmap <silent> gr <Plug>(coc-references)
+    let g:coc_disable_startup_warning = 1
 
     call plug#end()
 endif
