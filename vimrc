@@ -370,8 +370,9 @@ function! ToggleFoldAll() " toggles folding
         normal zR
     endif
 endfunction
-noremap <silent> <leader>Z :call ToggleFoldAll()<CR>
-noremap <leader>z zA
+noremap <silent> <leader>z :call ToggleFoldAll()<CR>
+map L zo
+map H za
 
 " replace ; and , by ;w and ;b
 noremap ;w ;
@@ -432,7 +433,6 @@ noremap <silent> <C-w>l :call TmuxAwareWinCmd('l')<CR>
 
 noremap <silent> <C-w>; :call TmuxAwareWinCmd('p')<CR>
 noremap <silent> <C-w><C-w> :call TmuxAwareWinCmd('w')<CR>
-
 
 """ VISUALS:
 
