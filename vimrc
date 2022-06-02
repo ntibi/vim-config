@@ -188,6 +188,8 @@ if exists(':Plug')
     nmap <silent> gr <Plug>(coc-references)
     let g:coc_disable_startup_warning = 1
 
+    Plug 'tikhomirov/vim-glsl'
+
     call plug#end()
 endif
 
