@@ -275,6 +275,8 @@ autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab softtab
 " format json w/ jq
 command Json %!jq .
 
+set clipboard=unnamedplus
+
 """ REMAPS:
 
 " scroll half-screen
