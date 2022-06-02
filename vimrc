@@ -438,6 +438,8 @@ noremap <silent> <C-w>l :call TmuxAwareWinCmd('l')<CR>
 noremap <silent> <C-w>; :call TmuxAwareWinCmd('p')<CR>
 noremap <silent> <C-w><C-w> :call TmuxAwareWinCmd('w')<CR>
 
+set termguicolors
+
 """ VISUALS:
 
 "colorscheme ron
