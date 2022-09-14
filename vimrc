@@ -111,45 +111,53 @@ if exists(':Plug')
     map <C-f> <Plug>(easymotion-bd-f)
     let g:EasyMotion_keys = 'ajsklhdfgweoincvb'
 
-    Plug 'https://github.com/vim-syntastic/syntastic'
-    let g:syntastic_c_include_dirs = ['./', './include', '../include']
-    let g:syntastic_c_compiler_options = '-std=gnu99 -pedantic -Wall -Wextra -masm=intel'
-    let g:syntastic_c_check_header = 1
+    " Plug 'https://github.com/vim-syntastic/syntastic'
+    " let g:syntastic_c_include_dirs = ['./', './include', '../include']
+    " let g:syntastic_c_compiler_options = '-std=gnu99 -pedantic -Wall -Wextra -masm=intel'
+    " let g:syntastic_c_check_header = 1
+" 
+    " let g:syntastic_cpp_include_dirs = ['./', './include', '../include']
+    " let g:syntastic_cpp_compiler_options = "-std=c++11 -pedantic -Wall -Wextra -masm=intel"
+    " let g:syntastic_cpp_check_header = 1
+" 
+    " function! SyntasticGcc()
+        " let g:syntastic_asm_compiler = 'gcc'
+    " endfunction
+    " function! SyntasticClang()
+        " let g:syntastic_asm_compiler = 'clang'
+    " endfunction
+" 
+    " function! SyntasticOsDev() " kernel developpement mode
+        " let g:syntastic_cpp_compiler_options = '-pedantic -Wall -Wextra -ffreestanding -nostdlib -masm=intel -fno-exceptions -fno-rtti -fno-builtin -fno-stack-protector -nodefaultlibs'
+        " let g:syntastic_c_compiler_options = '-std=gnu99 -pedantic -Wall -Wextra -ffreestanding -nostdlib -masm=intel'
+    " endfunction
+" 
+    " let g:syntastic_asm_dialect = 'intel'
+    " function! SyntasticNasm()
+        " let g:syntastic_asm_compiler = 'nasm'
+    " endfunction
+    " function! SyntasticAs()
+        " let g:syntastic_asm_compiler = 'gcc'
+    " endfunction
+" 
+    " let g:syntastic_always_populate_loc_list = 1
+    " let g:syntastic_auto_loc_list = 2
+    " let g:syntastic_check_on_open = 0
+    " let g:syntastic_check_on_wq = 0
+    " function! SyntasticCheckHook(errors)
+        " if !empty(a:errors)
+            " let g:syntastic_loc_list_height = min([len(a:errors), winheight('%') / 6])
+        " endif
+    " endfunction
+    " noremap <leader>ts :SyntasticToggleMode<CR>
 
-    let g:syntastic_cpp_include_dirs = ['./', './include', '../include']
-    let g:syntastic_cpp_compiler_options = "-std=c++11 -pedantic -Wall -Wextra -masm=intel"
-    let g:syntastic_cpp_check_header = 1
+    " Plug 'Quramy/tsuquyomi'
+    " let g:tsuquyomi_completion_detail = 1
+    "
+    " Plug 'rust-lang/rust.vim'
+    " let g:rustfmt_autosave = 1
 
-    function! SyntasticGcc()
-        let g:syntastic_asm_compiler = 'gcc'
-    endfunction
-    function! SyntasticClang()
-        let g:syntastic_asm_compiler = 'clang'
-    endfunction
-
-    function! SyntasticOsDev() " kernel developpement mode
-        let g:syntastic_cpp_compiler_options = '-pedantic -Wall -Wextra -ffreestanding -nostdlib -masm=intel -fno-exceptions -fno-rtti -fno-builtin -fno-stack-protector -nodefaultlibs'
-        let g:syntastic_c_compiler_options = '-std=gnu99 -pedantic -Wall -Wextra -ffreestanding -nostdlib -masm=intel'
-    endfunction
-
-    let g:syntastic_asm_dialect = 'intel'
-    function! SyntasticNasm()
-        let g:syntastic_asm_compiler = 'nasm'
-    endfunction
-    function! SyntasticAs()
-        let g:syntastic_asm_compiler = 'gcc'
-    endfunction
-
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_check_on_wq = 0
-    function! SyntasticCheckHook(errors)
-        if !empty(a:errors)
-            let g:syntastic_loc_list_height = min([len(a:errors), winheight('%') / 6])
-        endif
-    endfunction
-    noremap <leader>ts :SyntasticToggleMode<CR>
+    Plug 'neovim/nvim-lspconfig'
 
     Plug 'https://github.com/junegunn/fzf.vim'
     set rtp+=~/.fzf
@@ -159,19 +167,18 @@ if exists(':Plug')
     noremap <leader>L :Lines<CR>
     noremap <leader>f :Ag<CR>
     noremap <leader>F :Ag <C-r>"<CR>
-    noremap <leader>h :History<CR>
 
-    Plug 'https://github.com/neomake/neomake'
-    " let g:neomake_javascript_enabled_makers = ['eslint']
-    autocmd! BufWritePost,BufEnter * Neomake
-    augroup my_neomake_signs
-        au!
-        autocmd ColorScheme *
-            \ hi NeomakeErrorSign ctermfg=red |
-            \ hi NeomakeWarningSign ctermfg=yellow |
-            \ hi NeomakeInfoSign ctermfg=blue |
-            \ hi NeomakeMessageSign ctermfg=blue
-    augroup END
+    " Plug 'https://github.com/neomake/neomake'
+    " " let g:neomake_javascript_enabled_makers = ['eslint']
+    " autocmd! BufWritePost,BufEnter * Neomake
+    " augroup my_neomake_signs
+        " au!
+        " autocmd ColorScheme *
+            " \ hi NeomakeErrorSign ctermfg=red |
+            " \ hi NeomakeWarningSign ctermfg=yellow |
+            " \ hi NeomakeInfoSign ctermfg=blue |
+            " \ hi NeomakeMessageSign ctermfg=blue
+    " augroup END
 
     Plug 'https://github.com/moll/vim-node'
     Plug 'https://github.com/jelera/vim-javascript-syntax'
