@@ -188,12 +188,12 @@ if exists(':Plug')
 
     Plug 'https://github.com/dhruvasagar/vim-table-mode'
 
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    nmap <silent> gd <Plug>(coc-definition)
-    nmap <silent> gy <Plug>(coc-type-definition)
-    nmap <silent> gi <Plug>(coc-implementation)
-    nmap <silent> gr <Plug>(coc-references)
-    let g:coc_disable_startup_warning = 1
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " nmap <silent> gd <Plug>(coc-definition)
+    " nmap <silent> gy <Plug>(coc-type-definition)
+    " nmap <silent> gi <Plug>(coc-implementation)
+    " nmap <silent> gr <Plug>(coc-references)
+    " let g:coc_disable_startup_warning = 1
 
     Plug 'tikhomirov/vim-glsl'
 
@@ -445,31 +445,91 @@ noremap <silent> <C-w>l :call TmuxAwareWinCmd('l')<CR>
 noremap <silent> <C-w>; :call TmuxAwareWinCmd('p')<CR>
 noremap <silent> <C-w><C-w> :call TmuxAwareWinCmd('w')<CR>
 
-set termguicolors
+set completeopt+=menuone,noselect,noinsert " don't insert text automatically
+set pumheight=5 " keep the autocomplete suggestion menu small
+set shortmess+=c " don't give ins-completion-menu messages
 
-""" VISUALS:
+" if completion menu closed, and two non-spaces typed, call autocomplete
+" let s:insert_count = 0
+" function! OpenCompletion()
+    " if string(v:char) =~ ' '
+        " let s:insert_count = 0
+    " else                    
+        " let s:insert_count += 1
+    " endif
+    " if !pumvisible() && s:insert_count >= 2
+        " silent! call feedkeys("\<C-n>", "n")
+    " endif
+" endfunction
+" 
+" function! TurnOnAutoComplete()
+    " augroup autocomplete
+        " autocmd!
+        " autocmd InsertLeave let s:insert_count = 0
+        " autocmd InsertCharPre * silent! call OpenCompletion()
+    " augroup END
+" endfunction
+" 
+" function! TurnOffAutoComplete()
+    " augroup autocomplete
+        " autocmd!
+    " augroup END
+" endfunction
+" 
+" function! ReplayMacroWithoutAutoComplete()
+    " call TurnOffAutoComplete()
+    " let reg = getcharstr()
+    " execute "normal! @".reg
+    " call TurnOnAutoComplete()
+" endfunction
+" 
+" call TurnOnAutoComplete()
 
-"colorscheme ron
+" don't let the above mess with replaying macros
+" nnoremap <silent> @ :call ReplayMacroWithoutAutoComplete()<CR>
 
-"hi LineNr ctermfg=DarkGrey
-"hi CursorLineNr ctermfg=LightBlue
+" use tab for navigating the autocomplete menu
+inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? "\<C-n>" : "\<C-x>\<C-o>"
 
-"hi StatusLine   cterm=none ctermbg=236 ctermfg=51
-"hi StatusLineNC cterm=none ctermbg=235 ctermfg=238
+lua << EOF
+local opts = { noremap=true, silent=true }
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 
-"hi VertSplit ctermfg=DarkGrey ctermfg=DarkGrey
+local on_attach = function(client, bufnr)
+  -- Enable completion triggered by <c-x><c-o>
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-"set statusline=\ 
-"set statusline+=%{&modified?\"+\":\"\ \"}\ 
-"set statusline+=%f
-"set statusline+=\ 
-"set statusline+=%y
-"set statusline+=\ 
-"set statusline+=%r
-"set statusline+=\ 
-"set statusline+=%=
-"set statusline+=[%{&fenc},%{&ff}]
-"set statusline+=\ 
-"set statusline+=[%l,%v]
-"set statusline+=[%p%%]
+  -- Mappings.
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+
+  -- to keep
+  vim.keymap.set('n', '<leader><space>', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', '<leader>h', vim.lsp.buf.signature_help, bufopts)
+
+  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+
+  vim.keymap.set('n', 'gn', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, bufopts)
+end
+
+local servers = { 'pyright', 'rust_analyzer', 'tsserver' }
+for _, lsp in pairs(servers) do
+  require('lspconfig')[lsp].setup {
+    on_attach = on_attach,
+    flags = {
+      -- This will be the default in neovim 0.7+
+      debounce_text_changes = 150,
+    }
+  }
+end
+EOF
 
