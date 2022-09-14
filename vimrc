@@ -115,23 +115,23 @@ if exists(':Plug')
     " let g:syntastic_c_include_dirs = ['./', './include', '../include']
     " let g:syntastic_c_compiler_options = '-std=gnu99 -pedantic -Wall -Wextra -masm=intel'
     " let g:syntastic_c_check_header = 1
-" 
+"
     " let g:syntastic_cpp_include_dirs = ['./', './include', '../include']
     " let g:syntastic_cpp_compiler_options = "-std=c++11 -pedantic -Wall -Wextra -masm=intel"
     " let g:syntastic_cpp_check_header = 1
-" 
+"
     " function! SyntasticGcc()
         " let g:syntastic_asm_compiler = 'gcc'
     " endfunction
     " function! SyntasticClang()
         " let g:syntastic_asm_compiler = 'clang'
     " endfunction
-" 
+"
     " function! SyntasticOsDev() " kernel developpement mode
         " let g:syntastic_cpp_compiler_options = '-pedantic -Wall -Wextra -ffreestanding -nostdlib -masm=intel -fno-exceptions -fno-rtti -fno-builtin -fno-stack-protector -nodefaultlibs'
         " let g:syntastic_c_compiler_options = '-std=gnu99 -pedantic -Wall -Wextra -ffreestanding -nostdlib -masm=intel'
     " endfunction
-" 
+"
     " let g:syntastic_asm_dialect = 'intel'
     " function! SyntasticNasm()
         " let g:syntastic_asm_compiler = 'nasm'
@@ -139,7 +139,7 @@ if exists(':Plug')
     " function! SyntasticAs()
         " let g:syntastic_asm_compiler = 'gcc'
     " endfunction
-" 
+"
     " let g:syntastic_always_populate_loc_list = 1
     " let g:syntastic_auto_loc_list = 2
     " let g:syntastic_check_on_open = 0
@@ -353,8 +353,8 @@ noremap <leader>W :wa<CR>
 noremap <leader>q :qa!<CR>
 noremap <leader>d :bd<CR>
 " replaced by fzf
-" noremap <leader>b :buffers<CR>:buffer 
-" noremap <leader>e :edit 
+" noremap <leader>b :buffers<CR>:buffer
+" noremap <leader>e :edit
 noremap <leader>r :registers<CR>
 
 noremap <leader>s :s///g<left><left><left>
@@ -454,14 +454,14 @@ set shortmess+=c " don't give ins-completion-menu messages
 " function! OpenCompletion()
     " if string(v:char) =~ ' '
         " let s:insert_count = 0
-    " else                    
+    " else
         " let s:insert_count += 1
     " endif
     " if !pumvisible() && s:insert_count >= 2
         " silent! call feedkeys("\<C-n>", "n")
     " endif
 " endfunction
-" 
+"
 " function! TurnOnAutoComplete()
     " augroup autocomplete
         " autocmd!
@@ -469,20 +469,20 @@ set shortmess+=c " don't give ins-completion-menu messages
         " autocmd InsertCharPre * silent! call OpenCompletion()
     " augroup END
 " endfunction
-" 
+"
 " function! TurnOffAutoComplete()
     " augroup autocomplete
         " autocmd!
     " augroup END
 " endfunction
-" 
+"
 " function! ReplayMacroWithoutAutoComplete()
     " call TurnOffAutoComplete()
     " let reg = getcharstr()
     " execute "normal! @".reg
     " call TurnOnAutoComplete()
 " endfunction
-" 
+"
 " call TurnOnAutoComplete()
 
 " don't let the above mess with replaying macros
