@@ -498,8 +498,8 @@ set mouse=
 
 lua << EOF
 local opts = { noremap=true, silent=true }
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '[<space>', vim.diagnostic.goto_prev, opts)
+vim.keymap.set('n', ']<space>', vim.diagnostic.goto_next, opts)
 
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
