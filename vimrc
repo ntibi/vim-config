@@ -197,6 +197,8 @@ if exists(':Plug')
 
     Plug 'tikhomirov/vim-glsl'
 
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
     call plug#end()
 endif
 
