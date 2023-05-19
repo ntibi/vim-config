@@ -279,6 +279,8 @@ set foldlevelstart=256
 
 set nostartofline
 
+set formatoptions-=cro
+
 autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2
 
 " format json w/ jq
