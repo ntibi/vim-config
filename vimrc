@@ -103,8 +103,7 @@ if exists(':Plug')
     nmap g0 <plug>BufTabLine.Go(10)
     noremap <leader>tt :call buftabline#update(0)<CR>
 
-    Plug 'https://github.com/jiangmiao/auto-pairs' " auto-pair
-    let g:AutoPairs = { '(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`' }
+    Plug 'windwp/nvim-autopairs'
 
     Plug 'https://github.com/easymotion/vim-easymotion'
     let g:EasyMotion_do_mapping = 0
