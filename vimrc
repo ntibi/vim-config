@@ -43,6 +43,7 @@ if exists(':Plug')
     let g:NERDCommentEmptyLines = 1
     map <leader>c <plug>NERDCommenterToggle
     map <leader>a :call NERDComment('n', 'Append')<CR>
+    let g:NERDCustomDelimiters = { 'wgsl': { 'left': '//' } }
 
     Plug 'https://github.com/crusoexia/vim-monokai' " monokai theme
 
