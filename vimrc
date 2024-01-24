@@ -206,6 +206,8 @@ if exists(':Plug')
 
     Plug 'simrat39/rust-tools.nvim'
 
+    Plug 'github/copilot.vim'
+
     call plug#end()
 endif
 
