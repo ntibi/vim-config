@@ -196,6 +196,7 @@ if exists(':Plug')
     " let g:coc_disable_startup_warning = 1
 
     Plug 'tikhomirov/vim-glsl'
+    Plug 'https://github.com/DingDean/wgsl.vim'
 
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
