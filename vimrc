@@ -471,6 +471,12 @@ inoremap <expr> <C-n> pumvisible() ? "\<C-n>" : "\<C-x>\<C-o>"
 set mouse=
 
 lua << EOF
+
+require("nvim-autopairs").setup {}
+
+vim.api.nvim_set_keymap('i', '<S-tab>', 'copilot#AcceptWord("<CR>")', {expr=true, silent=true})
+vim.api.nvim_set_keymap('i', '<M-\\>', 'copilot#Suggest()', {expr=true, silent=true})
+
 local opts = { noremap=true, silent=true }
 vim.keymap.set('n', '[<space>', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']<space>', vim.diagnostic.goto_next, opts)
