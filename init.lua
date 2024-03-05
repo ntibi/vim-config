@@ -133,6 +133,9 @@ vim.wo.relativenumber = true
 vim.wo.numberwidth = 1
 vim.opt.wrap = false
 
+-- scroll 7 lines before top/bottom of the window
+vim.opt.scrolloff = 7
+
 -- disable mouse
 vim.opt.mouse = ""
 
