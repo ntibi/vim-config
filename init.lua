@@ -60,7 +60,6 @@ plugins = {
     'dhruvasagar/vim-table-mode',
     'tikhomirov/vim-glsl',
     'DingDean/wgsl.vim',
-    'fatih/vim-go',
     'hashivim/vim-terraform',
     'j-hui/fidget.nvim',
     'simrat39/rust-tools.nvim',
