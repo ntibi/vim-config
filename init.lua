@@ -27,7 +27,7 @@ plugins = {
     {'scrooloose/nerdtree',
       config = function()
 	vim.g.NERDTreeMinimalUI = 1
-	vim.keymap.set('n', '<C-n>', ':NERDTreeToggle<CR>', bufopts)
+	vim.keymap.set('n', '<C-n>', ':NERDTreeToggle %<CR>', bufopts)
 	 end,
     },
     {'scrooloose/nerdcommenter',
