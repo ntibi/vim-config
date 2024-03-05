@@ -158,11 +158,14 @@ vim.keymap.set('n', 'gb', ':execute "!git blame -L" . line(".") . ",+1 %"<CR>', 
 local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
 lspconfig.tsserver.setup {}
+lspconfig.gopls.setup {}
+lspconfig.wgsl_analyzer.setup {}
 lspconfig.rust_analyzer.setup {
   settings = {
     ['rust-analyzer'] = {},
   },
 }
+lspconfig.yamlls.setup {}
 
 vim.keymap.set('n', '<leader><space>', vim.lsp.buf.hover, bufopts)
 vim.keymap.set('n', '<leader>h', vim.lsp.buf.signature_help, bufopts)
