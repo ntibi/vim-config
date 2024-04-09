@@ -159,7 +159,13 @@ vim.keymap.set('n', 'gb', ':execute "!git blame -L" . line(".") . ",+1 %"<CR>', 
 local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
 lspconfig.tsserver.setup {}
-lspconfig.gopls.setup {}
+lspconfig.gopls.setup {
+  settings = {
+    gopls = {
+      gofumpt = true,
+    },
+  },
+}
 lspconfig.wgsl_analyzer.setup {}
 lspconfig.rust_analyzer.setup {
   settings = {
