@@ -83,6 +83,7 @@ vim.api.nvim_set_keymap('n', 'gj', 'J', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '@', ':normal @', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>\\', ':', { noremap = true, silent = false })
 vim.api.nvim_set_keymap('n', ';', ':', { noremap = true, silent = false })
+vim.api.nvim_set_keymap('v', ';', ':', { noremap = true, silent = false })
 
 -- C-j C-k to scroll
 vim.api.nvim_set_keymap('n', '<C-j>', '<C-d>', { noremap = true, silent = true })
