@@ -68,7 +68,6 @@ plugins = {
 	'DingDean/wgsl.vim',
 	'hashivim/vim-terraform',
 	'j-hui/fidget.nvim',
-	'simrat39/rust-tools.nvim',
 	'github/copilot.vim',
 	'hrsh7th/cmp-nvim-lsp',
 	'hrsh7th/cmp-buffer',
