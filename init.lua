@@ -181,6 +181,7 @@ lspconfig.rust_analyzer.setup {
 lspconfig.yamlls.setup {}
 lspconfig.clangd.setup {}
 lspconfig.lua_ls.setup {}
+lspconfig.bufls.setup {}
 
 vim.keymap.set('n', '<leader><space>', vim.lsp.buf.hover, bufopts)
 vim.keymap.set('n', '<leader>h', vim.lsp.buf.signature_help, bufopts)
