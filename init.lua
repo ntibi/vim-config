@@ -68,6 +68,7 @@ plugins = {
 		end,
 	},
 	'moll/vim-node',
+	'MunifTanjim/prettier.nvim',
 	'jelera/vim-javascript-syntax',
 	'dhruvasagar/vim-table-mode',
 	'tikhomirov/vim-glsl',
