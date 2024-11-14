@@ -154,7 +154,6 @@ vim.opt.mouse = ""
 
 -- set colorscheme
 vim.opt.termguicolors = true
-vim.cmd('colorscheme monokai')
 
 -- navigate diagnostics
 vim.keymap.set('n', '[<space>', vim.diagnostic.goto_prev, opts)
