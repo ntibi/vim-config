@@ -54,7 +54,6 @@ plugins = {
 	'ap/vim-buftabline',
 	'windwp/nvim-autopairs',
 	'easymotion/vim-easymotion',
-	'rust-lang/rust.vim',
 	'neovim/nvim-lspconfig',
 	'junegunn/fzf',
 	{
