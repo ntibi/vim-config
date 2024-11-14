@@ -42,7 +42,14 @@ plugins = {
 				{ noremap = true, silent = true })
 		end,
 	},
-	'crusoexia/vim-monokai',
+	{
+		'crusoexia/vim-monokai',
+		config = function()
+			vim.g.monokai_term_italic = 0
+			vim.g.monokai_gui_italic = 0
+			vim.cmd('colorscheme monokai')
+		end,
+	},
 	'itchyny/lightline.vim',
 	'ap/vim-buftabline',
 	'windwp/nvim-autopairs',
