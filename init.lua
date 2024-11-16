@@ -21,7 +21,13 @@ plugins = {
 	'itchyny/vim-cursorword',
 	'vim-scripts/a.vim',
 	'godlygeek/tabular',
-	'mbbill/undotree',
+	{
+		'mbbill/undotree',
+		config = function()
+			vim.keymap.set('n', '<C-x>u', vim.cmd.UndotreeToggle)
+		end,
+
+	},
 	'justinmk/vim-syntax-extra',
 	'airblade/vim-gitgutter',
 	{
