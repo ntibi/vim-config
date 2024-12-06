@@ -67,6 +67,7 @@ plugins = {
 		config = function()
 			vim.api.nvim_set_keymap('n', '<leader>b', ':Buffers<CR>', { noremap = true, silent = true })
 			vim.api.nvim_set_keymap('n', '<leader>e', ':GFiles<CR>', { noremap = true, silent = true })
+			vim.api.nvim_set_keymap('n', '<leader>E', ':Files<CR>', { noremap = true, silent = true })
 			vim.api.nvim_set_keymap('n', '<leader>l', ':BLines<CR>', { noremap = true, silent = true })
 			vim.api.nvim_set_keymap('n', '<leader>L', ':Lines<CR>', { noremap = true, silent = true })
 			vim.api.nvim_set_keymap('n', '<leader>f', ':Ag<CR>', { noremap = true, silent = true })
