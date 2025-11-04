@@ -60,7 +60,6 @@ plugins = {
 	'ap/vim-buftabline',
 	'windwp/nvim-autopairs',
 	'easymotion/vim-easymotion',
-	'neovim/nvim-lspconfig',
 	'junegunn/fzf',
 	{
 		'junegunn/fzf.vim',
@@ -183,25 +182,29 @@ vim.o.pumheight = 5
 -- quick git blame
 vim.keymap.set('n', 'gb', ':execute "!git blame -L" . line(".") . ",+1 %"<CR>', opts)
 
-local lspconfig = require('lspconfig')
-lspconfig.pyright.setup {}
-lspconfig.ts_ls.setup {}
-lspconfig.gopls.setup {
+
+-- Enable LSP servers for their filetypes
+vim.lsp.enable('pyright')
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('gopls')
+vim.lsp.enable('wgsl_analyzer')
+vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('clangd')
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('buf_ls')
+
+vim.lsp.config('gopls', {
 	settings = {
 		gopls = {
 			gofumpt = true,
 		},
 	},
-}
-lspconfig.wgsl_analyzer.setup {}
-lspconfig.rust_analyzer.setup {
+})
+vim.lsp.config('rust_analyzer', {
 	settings = {
 		['rust-analyzer'] = {},
 	},
-}
-lspconfig.clangd.setup {}
-lspconfig.lua_ls.setup {}
-lspconfig.buf_ls.setup {}
+})
 
 vim.keymap.set('n', '<leader><space>', vim.lsp.buf.hover, bufopts)
 vim.keymap.set('n', '<leader>h', vim.lsp.buf.signature_help, bufopts)
