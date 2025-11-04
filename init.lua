@@ -183,7 +183,6 @@ vim.o.pumheight = 5
 vim.keymap.set('n', 'gb', ':execute "!git blame -L" . line(".") . ",+1 %"<CR>', opts)
 
 
--- Enable LSP servers for their filetypes
 vim.lsp.enable('pyright')
 vim.lsp.enable('ts_ls')
 vim.lsp.enable('gopls')
