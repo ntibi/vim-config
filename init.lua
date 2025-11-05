@@ -181,8 +181,7 @@ function ToggleFoldAll()
 	end
 end
 
-vim.api.nvim_set_keymap('n', '<leader>z', 'za', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>x', ':lua ToggleFoldAll()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>z', ':lua ToggleFoldAll()<CR>', { noremap = true, silent = true })
 
 -- set colorscheme
 vim.opt.termguicolors = true
