@@ -108,7 +108,7 @@ vim.api.nvim_set_keymap('n', '<leader>d', ':bd!<CR>', { noremap = true, silent =
 
 -- vim features
 vim.api.nvim_set_keymap('n', 'gj', 'J', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', '@', ':normal @', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '@', ':normal @', { noremap = true, silent = false })
 vim.api.nvim_set_keymap('n', '<leader>\\', ':', { noremap = true, silent = false })
 vim.api.nvim_set_keymap('n', ';', ':', { noremap = true, silent = false })
 vim.api.nvim_set_keymap('v', ';', ':', { noremap = true, silent = false })
