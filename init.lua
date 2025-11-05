@@ -222,11 +222,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 		vim.bo[ev.buf].formatexpr = 'v:lua.vim.lsp.buf.format()'
 
-		local opts = { buffer = ev.buf }
 		vim.api.nvim_create_autocmd("BufWritePre", {
-			pattern = "*",
-			command = "lua vim.lsp.buf.format({ async = false })"
+			buffer = ev.buf,
+			callback = function()
+				vim.lsp.buf.format({ async = false })
+			end
 		})
-		--vim.lsp.buf.format { async = true }
 	end,
 })
