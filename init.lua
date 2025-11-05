@@ -168,6 +168,22 @@ vim.opt.scrolloff = 7
 -- disable mouse
 vim.opt.mouse = ""
 
+-- folding config
+vim.opt.foldmethod = 'syntax'
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
+
+function ToggleFoldAll()
+	if vim.wo.foldlevel == 0 then
+		vim.wo.foldlevel = 99
+	else
+		vim.wo.foldlevel = 0
+	end
+end
+
+vim.api.nvim_set_keymap('n', '<leader>z', 'za', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>x', ':lua ToggleFoldAll()<CR>', { noremap = true, silent = true })
+
 -- set colorscheme
 vim.opt.termguicolors = true
 
