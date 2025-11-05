@@ -173,6 +173,23 @@ vim.opt.foldmethod = 'syntax'
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
 
+function MarkdownFoldLevel(lnum)
+	local line = vim.fn.getline(lnum)
+	local header_level = line:match('^(#+)%s')
+	if header_level then
+		return '>' .. #header_level
+	end
+	return '='
+end
+
+vim.api.nvim_create_autocmd('FileType', {
+	pattern = 'markdown',
+	callback = function()
+		vim.opt_local.foldmethod = 'expr'
+		vim.opt_local.foldexpr = 'v:lua.MarkdownFoldLevel(v:lnum)'
+	end
+})
+
 function ToggleFoldAll()
 	if vim.wo.foldlevel == 0 then
 		vim.wo.foldlevel = 99
