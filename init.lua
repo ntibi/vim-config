@@ -95,7 +95,8 @@ plugins = {
 			-- VimTeX configuration goes here, e.g.
 			vim.g.vimtex_view_method = "zathura"
 		end
-	}
+	},
+	'OXY2DEV/markview.nvim',
 }
 
 require("lazy").setup(plugins, opts)
