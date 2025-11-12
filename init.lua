@@ -1,13 +1,13 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 
 vim.opt.rtp:prepend(lazypath)
@@ -16,87 +16,87 @@ vim.g.mapleader = '\\'
 vim.g.maplocalleader = '\\'
 
 plugins = {
-	'neovim/nvim-lspconfig',
-	'luochen1990/rainbow',
-	'itchyny/vim-cursorword',
-	'vim-scripts/a.vim',
-	'godlygeek/tabular',
-	{
-		'mbbill/undotree',
-		config = function()
-			vim.keymap.set('n', '<C-x>u', vim.cmd.UndotreeToggle)
-		end,
+    'neovim/nvim-lspconfig',
+    'luochen1990/rainbow',
+    'itchyny/vim-cursorword',
+    'vim-scripts/a.vim',
+    'godlygeek/tabular',
+    {
+        'mbbill/undotree',
+        config = function()
+            vim.keymap.set('n', '<C-x>u', vim.cmd.UndotreeToggle)
+        end,
 
-	},
-	'justinmk/vim-syntax-extra',
-	'airblade/vim-gitgutter',
-	{
-		'scrooloose/nerdtree',
-		config = function()
-			vim.g.NERDTreeMinimalUI = 1
-			vim.keymap.set('n', '<C-n>', ':NERDTreeToggle %<CR>', bufopts)
-		end,
-	},
-	{
-		'scrooloose/nerdcommenter',
-		config = function()
-			vim.api.nvim_set_keymap('n', '<leader>c', ':call nerdcommenter#Comment("n", "Toggle")<CR>',
-				{ noremap = true, silent = true })
-			vim.api.nvim_set_keymap('v', '<leader>c', ':call nerdcommenter#Comment("n", "Toggle")<CR>',
-				{ noremap = true, silent = true })
-			vim.api.nvim_set_keymap('n', '<leader>a', ':call NERDComment("n", "Append")<CR>',
-				{ noremap = true, silent = true })
-		end,
-	},
-	{
-		'crusoexia/vim-monokai',
-		config = function()
-			vim.g.monokai_term_italic = 0
-			vim.g.monokai_gui_italic = 0
-			vim.cmd('colorscheme monokai')
-		end,
-	},
-	'itchyny/lightline.vim',
-	'ap/vim-buftabline',
-	'windwp/nvim-autopairs',
-	'easymotion/vim-easymotion',
-	'junegunn/fzf',
-	{
-		'junegunn/fzf.vim',
-		config = function()
-			vim.api.nvim_set_keymap('n', '<leader>b', ':Buffers<CR>', { noremap = true, silent = true })
-			vim.api.nvim_set_keymap('n', '<leader>e', ':GFiles<CR>', { noremap = true, silent = true })
-			vim.api.nvim_set_keymap('n', '<leader>E', ':Files<CR>', { noremap = true, silent = true })
-			vim.api.nvim_set_keymap('n', '<leader>l', ':BLines<CR>', { noremap = true, silent = true })
-			vim.api.nvim_set_keymap('n', '<leader>L', ':Lines<CR>', { noremap = true, silent = true })
-			vim.api.nvim_set_keymap('n', '<leader>f', ':Ag<CR>', { noremap = true, silent = true })
-			vim.api.nvim_set_keymap('n', '<leader>F', ':Ag <C-r>"<CR>', { noremap = true, silent = true })
-		end,
-	},
-	'moll/vim-node',
-	'MunifTanjim/prettier.nvim',
-	'jelera/vim-javascript-syntax',
-	'dhruvasagar/vim-table-mode',
-	'tikhomirov/vim-glsl',
-	'DingDean/wgsl.vim',
-	'hashivim/vim-terraform',
-	'j-hui/fidget.nvim',
-	'github/copilot.vim',
-	'hrsh7th/cmp-nvim-lsp',
-	'hrsh7th/cmp-buffer',
-	'hrsh7th/cmp-path',
-	'hrsh7th/cmp-cmdline',
-	'hrsh7th/nvim-cmp',
-	{
-		"lervag/vimtex",
-		lazy = false, -- we don't want to lazy load VimTeX
-		-- tag = "v2.15", -- uncomment to pin to a specific release
-		init = function()
-			-- VimTeX configuration goes here, e.g.
-			vim.g.vimtex_view_method = "zathura"
-		end
-	},
-	'OXY2DEV/markview.nvim',
+    },
+    'justinmk/vim-syntax-extra',
+    'airblade/vim-gitgutter',
+    {
+        'scrooloose/nerdtree',
+        config = function()
+            vim.g.NERDTreeMinimalUI = 1
+            vim.keymap.set('n', '<C-n>', ':NERDTreeToggle %<CR>', bufopts)
+        end,
+    },
+    {
+        'scrooloose/nerdcommenter',
+        config = function()
+            vim.api.nvim_set_keymap('n', '<leader>c', ':call nerdcommenter#Comment("n", "Toggle")<CR>',
+                { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('v', '<leader>c', ':call nerdcommenter#Comment("n", "Toggle")<CR>',
+                { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>a', ':call NERDComment("n", "Append")<CR>',
+                { noremap = true, silent = true })
+        end,
+    },
+    {
+        'crusoexia/vim-monokai',
+        config = function()
+            vim.g.monokai_term_italic = 0
+            vim.g.monokai_gui_italic = 0
+            vim.cmd('colorscheme monokai')
+        end,
+    },
+    'itchyny/lightline.vim',
+    'ap/vim-buftabline',
+    'windwp/nvim-autopairs',
+    'easymotion/vim-easymotion',
+    'junegunn/fzf',
+    {
+        'junegunn/fzf.vim',
+        config = function()
+            vim.api.nvim_set_keymap('n', '<leader>b', ':Buffers<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>e', ':GFiles<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>E', ':Files<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>l', ':BLines<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>L', ':Lines<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>f', ':Ag<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>F', ':Ag <C-r>"<CR>', { noremap = true, silent = true })
+        end,
+    },
+    'moll/vim-node',
+    'MunifTanjim/prettier.nvim',
+    'jelera/vim-javascript-syntax',
+    'dhruvasagar/vim-table-mode',
+    'tikhomirov/vim-glsl',
+    'DingDean/wgsl.vim',
+    'hashivim/vim-terraform',
+    'j-hui/fidget.nvim',
+    'github/copilot.vim',
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
+    'hrsh7th/nvim-cmp',
+    {
+        "lervag/vimtex",
+        lazy = false, -- we don't want to lazy load VimTeX
+        -- tag = "v2.15", -- uncomment to pin to a specific release
+        init = function()
+            -- VimTeX configuration goes here, e.g.
+            vim.g.vimtex_view_method = "zathura"
+        end
+    },
+    'OXY2DEV/markview.nvim',
 }
 
 require("lazy").setup(plugins, opts)
@@ -162,6 +162,12 @@ vim.wo.relativenumber = true
 vim.wo.numberwidth = 1
 vim.opt.wrap = false
 
+-- use spaces instead of tabs
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+
 -- scroll 7 lines before top/bottom of the window
 vim.opt.scrolloff = 7
 
@@ -174,28 +180,28 @@ vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
 
 function MarkdownFoldLevel(lnum)
-	local line = vim.fn.getline(lnum)
-	local header_level = line:match('^(#+)%s')
-	if header_level then
-		return '>' .. #header_level
-	end
-	return '='
+    local line = vim.fn.getline(lnum)
+    local header_level = line:match('^(#+)%s')
+    if header_level then
+        return '>' .. #header_level
+    end
+    return '='
 end
 
 vim.api.nvim_create_autocmd('FileType', {
-	pattern = 'markdown',
-	callback = function()
-		vim.opt_local.foldmethod = 'expr'
-		vim.opt_local.foldexpr = 'v:lua.MarkdownFoldLevel(v:lnum)'
-	end
+    pattern = 'markdown',
+    callback = function()
+        vim.opt_local.foldmethod = 'expr'
+        vim.opt_local.foldexpr = 'v:lua.MarkdownFoldLevel(v:lnum)'
+    end
 })
 
 function ToggleFoldAll()
-	if vim.wo.foldlevel == 0 then
-		vim.wo.foldlevel = 99
-	else
-		vim.wo.foldlevel = 0
-	end
+    if vim.wo.foldlevel == 0 then
+        vim.wo.foldlevel = 99
+    else
+        vim.wo.foldlevel = 0
+    end
 end
 
 vim.api.nvim_set_keymap('n', '<leader>z', ':lua ToggleFoldAll()<CR>', { noremap = true, silent = true })
@@ -226,16 +232,16 @@ vim.lsp.enable('lua_ls')
 vim.lsp.enable('buf_ls')
 
 vim.lsp.config('gopls', {
-	settings = {
-		gopls = {
-			gofumpt = true,
-		},
-	},
+    settings = {
+        gopls = {
+            gofumpt = true,
+        },
+    },
 })
 vim.lsp.config('rust_analyzer', {
-	settings = {
-		['rust-analyzer'] = {},
-	},
+    settings = {
+        ['rust-analyzer'] = {},
+    },
 })
 
 vim.keymap.set('n', '<leader><space>', vim.lsp.buf.hover, bufopts)
@@ -249,16 +255,16 @@ vim.keymap.set('n', 'gn', vim.lsp.buf.rename, bufopts)
 vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, bufopts)
 
 vim.api.nvim_create_autocmd('LspAttach', {
-	group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-	callback = function(ev)
-		vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-		vim.bo[ev.buf].formatexpr = 'v:lua.vim.lsp.buf.format()'
+    group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+    callback = function(ev)
+        vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+        vim.bo[ev.buf].formatexpr = 'v:lua.vim.lsp.buf.format()'
 
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			buffer = ev.buf,
-			callback = function()
-				vim.lsp.buf.format({ async = false })
-			end
-		})
-	end,
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = ev.buf,
+            callback = function()
+                vim.lsp.buf.format({ async = false })
+            end
+        })
+    end,
 })
