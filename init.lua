@@ -15,6 +15,8 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = '\\'
 vim.g.maplocalleader = '\\'
 
+vim.opt.termguicolors = true
+
 plugins = {
     'neovim/nvim-lspconfig',
     'luochen1990/rainbow',
@@ -56,8 +58,12 @@ plugins = {
             vim.cmd('colorscheme monokai')
         end,
     },
-    'itchyny/lightline.vim',
-    'ap/vim-buftabline',
+    {
+        'itchyny/lightline.vim',
+        config = function()
+            vim.g.lightline = { enable = { tabline = 0 } }
+        end,
+    },
     'windwp/nvim-autopairs',
     'easymotion/vim-easymotion',
     'junegunn/fzf',
@@ -97,6 +103,31 @@ plugins = {
         end
     },
     'OXY2DEV/markview.nvim',
+    {
+        'akinsho/bufferline.nvim',
+        version = '*',
+        dependencies = 'nvim-tree/nvim-web-devicons',
+        config = function()
+            require('bufferline').setup({
+                options = {
+                    mode = 'buffers',
+                    show_buffer_close_icons = false,
+                    show_close_icon = false,
+                    separator_style = 'thin',
+                    diagnostics = 'nvim_lsp',
+                },
+            })
+            vim.keymap.set('n', '<leader>1', '<Cmd>BufferLineGoToBuffer 1<CR>', { silent = true })
+            vim.keymap.set('n', '<leader>2', '<Cmd>BufferLineGoToBuffer 2<CR>', { silent = true })
+            vim.keymap.set('n', '<leader>3', '<Cmd>BufferLineGoToBuffer 3<CR>', { silent = true })
+            vim.keymap.set('n', '<leader>4', '<Cmd>BufferLineGoToBuffer 4<CR>', { silent = true })
+            vim.keymap.set('n', '<leader>5', '<Cmd>BufferLineGoToBuffer 5<CR>', { silent = true })
+            vim.keymap.set('n', '<leader>6', '<Cmd>BufferLineGoToBuffer 6<CR>', { silent = true })
+            vim.keymap.set('n', '<leader>7', '<Cmd>BufferLineGoToBuffer 7<CR>', { silent = true })
+            vim.keymap.set('n', '<leader>8', '<Cmd>BufferLineGoToBuffer 8<CR>', { silent = true })
+            vim.keymap.set('n', '<leader>9', '<Cmd>BufferLineGoToBuffer 9<CR>', { silent = true })
+        end,
+    },
 }
 
 require("lazy").setup(plugins, opts)
@@ -205,9 +236,6 @@ function ToggleFoldAll()
 end
 
 vim.api.nvim_set_keymap('n', '<leader>z', ':lua ToggleFoldAll()<CR>', { noremap = true, silent = true })
-
--- set colorscheme
-vim.opt.termguicolors = true
 
 -- navigate diagnostics
 vim.keymap.set('n', '[<space>', vim.diagnostic.goto_prev, opts)
